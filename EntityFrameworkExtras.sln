@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras", "EntityFrameworkExtras\EntityFrameworkExtras.csproj", "{7A59AE4F-751F-4BE0-BA70-020072F1409E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.Tests", "EntityFrameworkExtras.Tests\EntityFrameworkExtras.Tests.csproj", "{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{7A59AE4F-751F-4BE0-BA70-020072F1409E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A59AE4F-751F-4BE0-BA70-020072F1409E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A59AE4F-751F-4BE0-BA70-020072F1409E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
