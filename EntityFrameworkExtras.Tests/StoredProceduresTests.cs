@@ -99,10 +99,9 @@ namespace EntityFrameworkExtras.Tests
             public string Postcode { get; set; }
         }
 
+        
 
-
-
-        [TestMethod]
+        [TestMethod]        
         public void Execute_Stored_Procedure_With_Output_Parameter_Without_Error()
         {
             var proc = new GetMemberAgesStoredProcedure();

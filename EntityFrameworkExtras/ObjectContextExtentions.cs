@@ -56,7 +56,10 @@ namespace EntityFrameworkExtras
                 PropertyInfo propertyInfo = storedProcedure.GetType().GetProperty(sqlParameter.ParameterName.Substring(1));
 
                 if (propertyInfo != null)
-                    propertyInfo.SetValue(storedProcedure, sqlParameter.Value, null);
+                {
+                    if (sqlParameter.Value != DBNull.Value)
+                        propertyInfo.SetValue(storedProcedure, sqlParameter.Value, null);
+                }
             }
         }
     }
