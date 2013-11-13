@@ -9,7 +9,14 @@ namespace EntityFrameworkExtras
     {
         public string GetParameterName(PropertyInfo propertyInfo)
         {
-            return propertyInfo.Name;
+            var rValue = propertyInfo.Name;
+
+            // grab the name of the parameter from the attribute, if it's defined.
+            var attribute = Attributes.GetAttribute<StoredProcedureParameterAttribute>(propertyInfo);
+            if (attribute != null && !string.IsNullOrEmpty(attribute.ParameterName))
+                rValue = attribute.ParameterName;
+
+            return rValue;
         }
 
         public string GetUserDefinedTableType(PropertyInfo propertyInfo)
