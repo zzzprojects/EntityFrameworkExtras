@@ -73,7 +73,7 @@ namespace EntityFrameworkExtras.Tests
         [StoredProcedure("sp_AddMemberWithAddresses")]
         public class AddMemberStoredWithAddressesProcedure
         {
-            [StoredProcedureParameter(SqlDbType.NVarChar)]
+            [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "ForeName")]
             public string FirstName { get; set; }
 
             [StoredProcedureParameter(SqlDbType.NVarChar)]

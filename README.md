@@ -14,10 +14,10 @@ EntityFrameworkExtras provides some useful additions to EntityFramework such as 
 [StoredProcedure("sp_AddMemberWithAddresses")]
 public class AddMemberStoredWithAddressesProcedure
 {
-  [StoredProcedureParameter(SqlDbType.NVarChar)]
+  [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "ForeName")]
 	public string FirstName { get; set; }
 
-	[StoredProcedureParameter(SqlDbType.NVarChar)]
+	[StoredProcedureParameter(SqlDbType.NVarChar,ParameterName = "SurName")]
 	public string LastName { get; set; }
 
 	[StoredProcedureParameter(SqlDbType.Int)]
