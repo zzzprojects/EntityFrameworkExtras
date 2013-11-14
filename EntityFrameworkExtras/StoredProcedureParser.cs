@@ -65,7 +65,8 @@ namespace EntityFrameworkExtras
                             IsMandatory = isMandatory,
                             SqlDataType = attribute.DataType,
                             PropertyInfo = propertyInfo,
-                            Direction = attribute.Direction                           
+                            Direction = attribute.Direction,
+                            Size = attribute.Size
                         });
                 }
             }
@@ -96,6 +97,7 @@ namespace EntityFrameworkExtras
                 SqlParameter sqlParameter = GenerateSqlParameter(p.Name,
                                                                  value,
                                                                  p.IsMandatory,
+                                                                 p.Size,
                                                                  p.IsUserDefinedTable,
                                                                  p.IsUserDefinedTable ?
                                                                                     _helper.GetUserDefinedTableType(p.PropertyInfo) : null,
@@ -108,13 +110,14 @@ namespace EntityFrameworkExtras
             return sqlParams.ToArray();
         }
 
-        private static SqlParameter GenerateSqlParameter(string parameterName, object paramValue, bool mandatory,
+        private static SqlParameter GenerateSqlParameter(string parameterName, object paramValue, bool mandatory, int size,
                                            bool isUserDefinedTableParameter, string udtType, SqlDbType dataType, ParameterDirection direction)
         {
             var sqlParameter = new SqlParameter("@" + parameterName, paramValue ?? DBNull.Value)
             {
                 Direction = direction,
-                IsNullable = !mandatory
+                IsNullable = !mandatory,
+                Size = size
             };
 
             if (isUserDefinedTableParameter)

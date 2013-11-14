@@ -10,6 +10,7 @@ namespace EntityFrameworkExtras
         internal SqlDbType SqlDataType { get; set; }
         internal bool IsMandatory { get; set; }
         internal bool IsUserDefinedTable { get; set; }
+        internal int Size { get; set; }
         internal PropertyInfo PropertyInfo { get; set; }
     }
 }
