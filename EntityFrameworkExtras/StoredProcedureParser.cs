@@ -14,19 +14,16 @@ namespace EntityFrameworkExtras
         
         public static StoredProcedureInfo BuildStoredProcedureInfo(object storedProcedure)
         {
-            var storedProcedureName = GetStoreProcedureName(storedProcedure);
+            Collection<StoredProcedureParameterInfo> parameterInfo = BuildStoredProcedureParameterInfo(storedProcedure);
 
-            var parameterInfo = BuildStoredProcedureParameterInfo(storedProcedure);
+            string sql = BuildSql(storedProcedure, parameterInfo);
+            SqlParameter[] sqlParameters = BuildSqlParameters(storedProcedure, parameterInfo);
 
-            string sql = BuildSql(storedProcedureName, parameterInfo);
-
-            var info = new StoredProcedureInfo(storedProcedureName)
+            var info = new StoredProcedureInfo()
                 {
                     Sql = sql,
-                    ParameterInfos = parameterInfo,
+                    SqlParameters = sqlParameters
                 };
-
-            info.SqlParameters = BuildSqlParameters(storedProcedure, info);
 
             return info;
             
@@ -74,19 +71,21 @@ namespace EntityFrameworkExtras
             return parameters;
         }
 
-        private static string BuildSql(string storedProcedureName, IEnumerable<StoredProcedureParameterInfo> parameterInfos)
+        private static string BuildSql(object storedProcedure, IEnumerable<StoredProcedureParameterInfo> parameterInfos)
         {
+            var storedProcedureName = GetStoreProcedureName(storedProcedure);
+
             var execSql = String.Format("EXEC {0} ", storedProcedureName);
             var parameterSql = String.Join(",", parameterInfos.Select(pi => String.Format("@{0} = @{0} {1}", pi.Name, pi.Direction == ParameterDirection.Input ? String.Empty : "out")));
 
             return execSql + parameterSql;
         }
 
-        private static SqlParameter[] BuildSqlParameters(object storedProcedure, StoredProcedureInfo info)
+        private static SqlParameter[] BuildSqlParameters(object storedProcedure, IEnumerable<StoredProcedureParameterInfo> parameterInfos)
         {
             var sqlParams = new List<SqlParameter>();
 
-            foreach (var p in info.ParameterInfos)
+            foreach (var p in parameterInfos)
             {
                 var propertyValue = p.PropertyInfo.GetValue(storedProcedure, null);
 
