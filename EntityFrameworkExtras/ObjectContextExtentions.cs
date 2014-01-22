@@ -42,7 +42,7 @@ namespace EntityFrameworkExtras
 
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
-            IEnumerable<T> result = context.ExecuteStoreQuery<T>(info.Sql, info.SqlParameters);
+            List<T> result = context.ExecuteStoreQuery<T>(info.Sql, info.SqlParameters).ToList();
 
             SetOutputParameterValues(info.SqlParameters, storedProcedure);
 

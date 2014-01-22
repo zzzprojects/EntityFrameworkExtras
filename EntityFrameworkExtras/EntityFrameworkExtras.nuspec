@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>EntityFrameworkExtras</id>
-        <version>1.0.0.3</version>
+        <version>1.0.0.5</version>
         <title>EntityFramework Extras</title>
         <authors>Michael Rodda &amp; Craig Bovis</authors>
         <owners>Michael Rodda &amp; Craig Bovis</owners>
@@ -20,7 +20,7 @@ https://github.com/Fodsuk/EntityFrameworkExtras</releaseNotes>
         <language>en-GB</language>
         <tags>EntityFramework StoredProcedure</tags>
         <dependencies>
-            <dependency id="EntityFramework" version="4.3.1" />
+            <dependency id="EntityFramework" />
         </dependencies>
     </metadata>
 </package>
