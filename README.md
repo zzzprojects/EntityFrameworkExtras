@@ -89,3 +89,11 @@ context.Database.ExecuteStoredProcedure(proc);
 
 int age = proc.Age; //Is now the oldest age
 ~~~
+
+
+###Thanks to the contributors!###
+
+* https://github.com/JoeBrockhaus - Joe
+* https://github.com/thomasvanderhoofWork - Thomas
+
+
