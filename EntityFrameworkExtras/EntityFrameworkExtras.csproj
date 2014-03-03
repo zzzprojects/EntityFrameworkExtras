@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes.cs" />
+    <Compile Include="ColumnInformation.cs" />
     <Compile Include="ObjectContextExtentions.cs" />
     <Compile Include="StoredProcedureInfo.cs" />
     <Compile Include="DatabaseExtensions.cs" />

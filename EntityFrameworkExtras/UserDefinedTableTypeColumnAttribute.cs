@@ -9,6 +9,14 @@ namespace EntityFrameworkExtras
             Order = order;
         }
 
+        public UserDefinedTableTypeColumnAttribute(int order, string name)
+        {
+            Order = order;
+            Name = name;
+        }
+
         public int Order { get; set; }
+
+        public string Name { get; set; }
     }
 }

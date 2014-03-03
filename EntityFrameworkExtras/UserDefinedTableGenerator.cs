@@ -24,11 +24,12 @@ namespace EntityFrameworkExtras
             _value = value;
         }
 
+        
         public DataTable GenerateTable()
         {
             var dt = new DataTable();
 
-            List<string> columns = GetColumns().ToList();
+            List<ColumnInformation> columns = GetColumnInformation();
 
             AddColumns(columns, dt);
             AddRows(columns, dt);
@@ -36,44 +37,57 @@ namespace EntityFrameworkExtras
             return dt;
         }
 
-        private void AddColumns(IEnumerable<string> columns, DataTable dt)
+        internal void AddColumns(List<ColumnInformation> columns, DataTable dt)
         {
-            foreach (string columnName in columns)
+            foreach (ColumnInformation column in columns)
             {
-                dt.Columns.Add(columnName);
+                Type type = column.Property.PropertyType;
+
+                if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof (Nullable<>))
+                {
+                    type = type.GetGenericArguments()[0];
+                }
+                
+                dt.Columns.Add(column.Name, type);
             }
         }
 
-        private void AddRows(List<string> columns, DataTable dt)
+        internal void AddRows(List<ColumnInformation> columns, DataTable dt)
         {
             foreach (object o in (IEnumerable)_value)
             {
                 DataRow row = dt.NewRow();
                 dt.Rows.Add(row);
 
-                foreach (string column in columns)
+                foreach (ColumnInformation column in columns)
                 {
-                    object value = _type.GetProperty(column).GetValue(o, null);
-                    row.SetField(column, value);
+                    object value = column.Property.GetValue(o, null);
+                    row.SetField(column.Name, value);
                 }
             }
         }
 
-        private IEnumerable<string> GetColumns()
+        private List<ColumnInformation> GetColumnInformation()
         {
-            var columns = new Dictionary<int, string>();
+            var columns = new List<ColumnInformation>();
 
             foreach (PropertyInfo propertyInfo in _type.GetProperties())
             {
                 var attribute = Attributes.GetAttribute<UserDefinedTableTypeColumnAttribute>(propertyInfo);
 
                 if (attribute != null)
-                    columns.Add(attribute.Order, propertyInfo.Name);
+                {
+                    var column = new ColumnInformation();
+                    column.Name = attribute.Name ?? propertyInfo.Name;
+                    column.Property = propertyInfo;
+                    column.Order = attribute.Order;
+
+                    columns.Add(column);
+                }
             }
 
-            var sortedColumns = columns.OrderBy(kvp => kvp.Key);
+            return columns.OrderBy(info => info.Order).ToList();
 
-            return sortedColumns.Select(kvp => kvp.Value);
         }
     }
 }

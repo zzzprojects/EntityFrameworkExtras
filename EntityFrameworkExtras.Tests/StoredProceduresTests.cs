@@ -61,7 +61,8 @@ namespace EntityFrameworkExtras.Tests
                 Age = 26,
                 Addresses = new List<Address>()
                 {
-                    new Address() {Line1 = "16", Line2 = "The Lane", Postcode = "MA24WE"}
+                    new Address() {Line1 = "16", AddressLine2 = "The Lane", Postcode = "MA24WE"},
+                    new Address() {Line1 = "77", AddressLine2 = "Ache Lane", Postcode = "DFD44", IsPrimary =  true},
                 }
             };
 
@@ -73,7 +74,7 @@ namespace EntityFrameworkExtras.Tests
         [StoredProcedure("sp_AddMemberWithAddresses")]
         public class AddMemberStoredWithAddressesProcedure
         {
-            [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "ForeName")]
+            [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "FirstName")]
             public string FirstName { get; set; }
 
             [StoredProcedureParameter(SqlDbType.NVarChar)]
@@ -92,16 +93,20 @@ namespace EntityFrameworkExtras.Tests
             [UserDefinedTableTypeColumn(1)]
             public string Line1 { get; set; }
 
-            [UserDefinedTableTypeColumn(2)]
-            public string Line2 { get; set; }
+            [UserDefinedTableTypeColumn(2, "Line2")]
+            public string AddressLine2 { get; set; }
 
             [UserDefinedTableTypeColumn(3)]
             public string Postcode { get; set; }
+
+            [UserDefinedTableTypeColumn(4, "IsPrimary")]
+            public bool? IsPrimary { get; set; }
+
         }
 
-        
 
-        [TestMethod]        
+
+        [TestMethod]
         public void Execute_Stored_Procedure_With_Output_Parameter_Without_Error()
         {
             var proc = new GetMemberAgesStoredProcedure();
