@@ -3,88 +3,89 @@ using System.Data;
 
 namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
 {
-    [StoredProcedure("AllTypesStoredProcedure")]
-    public class AllTypesStoredProcedure
+    [UserDefinedTableType("AllTypesUDT")]
+    public class AllTypesUDT
     {
-        [StoredProcedureParameter(SqlDbType.NVarChar)]
+   
+        [UserDefinedTableTypeColumn(1)]
         public String ParameterNvarChar { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.BigInt)]
+        [UserDefinedTableTypeColumn(2)]
         public Int64? ParameterBigInt { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Binary)]
+        [UserDefinedTableTypeColumn(3)]
         public Byte[] ParameterBinary { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Bit)]
+        [UserDefinedTableTypeColumn(4)]
         public Boolean? ParameterBit { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Char)]
+        [UserDefinedTableTypeColumn(5)]
         public String ParameterChar { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Date)]
+        [UserDefinedTableTypeColumn(6)]
         public DateTime? ParameterDate { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.DateTime)]
+        [UserDefinedTableTypeColumn(7)]
         public DateTime? ParameterDateTime { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.DateTime2)]
+        [UserDefinedTableTypeColumn(8)]
         public DateTime? ParameterDateTime2 { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.DateTimeOffset)]
+        [UserDefinedTableTypeColumn(9)]
         public DateTimeOffset? ParameterDateTimeOffset { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Decimal)]
+        [UserDefinedTableTypeColumn(10)]
         public Decimal? ParameterDecimal { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Float)]
+        [UserDefinedTableTypeColumn(11)]
         public Double? ParameterFloat { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Image)]
+        [UserDefinedTableTypeColumn(12)]
         public Byte[] ParameterImage { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Int)]
+        [UserDefinedTableTypeColumn(13)]
         public Int32? ParameterInt { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Decimal)]
+        [UserDefinedTableTypeColumn(14)]
         public Decimal? ParameterMoney { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.NChar)]
+        [UserDefinedTableTypeColumn(15)]
         public String ParameterNChar { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.NText)]
+        [UserDefinedTableTypeColumn(16)]
         public String ParameterNText { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Real)]
+        [UserDefinedTableTypeColumn(17)]
         public Single? ParameterReal { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.SmallDateTime)]
+        [UserDefinedTableTypeColumn(18)]
         public DateTime? ParameterSmallDateTime { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.SmallInt)]
+        [UserDefinedTableTypeColumn(19)]
         public Int16? ParameterSmallInt { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.SmallMoney)]
+        [UserDefinedTableTypeColumn(20)]
         public Decimal? ParameterSmallMoney { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Text)]
+        [UserDefinedTableTypeColumn(21)]
         public String ParameterText { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Time)]
+        [UserDefinedTableTypeColumn(22)]
         public TimeSpan? ParameterTime { get; set; }
-
-        [StoredProcedureParameter(SqlDbType.TinyInt)]
+        
+        [UserDefinedTableTypeColumn(23)]
         public Byte? ParameterTinyInt { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.UniqueIdentifier)]
+        [UserDefinedTableTypeColumn(24)]
         public Guid? ParameterUniqueIdentifier { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.VarBinary)]
+        [UserDefinedTableTypeColumn(25)]
         public Byte[] ParameterVarBinary { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.VarChar)]
+        [UserDefinedTableTypeColumn(26)]
         public String ParameterVarChar { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Xml)]
+        [UserDefinedTableTypeColumn(27)]
         public String ParameterXml { get; set; }
     }
 }

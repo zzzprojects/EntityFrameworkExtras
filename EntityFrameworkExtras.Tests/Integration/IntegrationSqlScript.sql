@@ -1,5 +1,7 @@
 ﻿USE [master]
 
+-- Drop and Rebuild the database
+
 IF EXISTS(select * from sys.databases where name='EntityFrameworkExtrasTests')
 BEGIN
 
@@ -11,6 +13,7 @@ END
 
 GO
 CREATE DATABASE EntityFrameworkExtrasTests
+
 GO
 
 
@@ -18,9 +21,10 @@ USE [EntityFrameworkExtrasTests]
 GO
 
 
+/***********************************/
+/*		General Tests			   */
+/***********************************/
 
-
--- NoParametersStoredProcedure
 CREATE PROCEDURE NoParametersStoredProcedure
 
 AS
@@ -32,9 +36,11 @@ GO
 
 
 
+/***********************************/
+/*		Parameter Tests			   */
+/***********************************/
 
 
--- AllTypesStoredProcedure
 CREATE PROCEDURE AllTypesStoredProcedure
 
 	@ParameterNvarchar NVARCHAR(MAX) = NULL,
@@ -166,6 +172,10 @@ BEGIN
 END 
 
 
+/***********************************/
+/*	Parameter Direction Tests	   */
+/***********************************/
+
 
 GO
 
@@ -221,8 +231,12 @@ END
 
 GO
 
--- ParameterSizeStoreProcedure
-CREATE PROCEDURE ParameterSizeStoreProcedure
+/***********************************/
+/*	Parameter Size Tests    	   */
+/***********************************/
+
+
+CREATE PROCEDURE ParameterSizeStoredProcedure
 
 	@ParameterSizeNotSet NVARCHAR(10) = NULL,
 	@ParameterSizeSetTo5 NVARCHAR(10) = NULL,
@@ -262,3 +276,52 @@ END
 
 GO
 
+
+
+/***********************************/
+/*	   UDT Direction Tests	       */
+/***********************************/
+
+CREATE TYPE AllTypesUDT AS TABLE 
+	(
+		ParameterNvarchar NVARCHAR(MAX) NULL,
+		ParameterBigInt BIGINT NULL,
+	    ParameterBinary BINARY(26) NULL,
+	    ParameterBit BIT NULL,
+	    ParameterChar CHAR(10) NULL,
+	    ParameterDate DATE NULL,
+		ParameterDateTime DATETIME NULL,
+		ParameterDateTime2 DATETIME2 NULL,
+		ParameterDateTimeOffset DATETIMEOFFSET NULL,
+		ParameterDecimal DECIMAL NULL,
+	    ParameterFloat FLOAT NULL,
+		ParameterImage IMAGE NULL,
+		ParameterInt INT NULL,
+		ParameterMoney MONEY NULL,
+		ParameterNChar NCHAR(10) NULL,
+		ParameterNText NTEXT NULL,
+		ParameterReal REAL NULL,
+		ParameterSmallDateTime SMALLDATETIME NULL,
+		ParameterSmallInt SMALLINT NULL,
+		ParameterSmallMoney SMALLMONEY NULL,
+		ParameterText TEXT NULL,
+		ParameterTime TIME NULL,
+		ParameterTinyInt TINYINT NULL,
+		ParameterUniqueIdentifier UNIQUEIDENTIFIER NULL,
+		ParameterVarBinary VARBINARY(100) NULL,
+		ParameterVarChar VARCHAR(100) NULL,
+		ParameterXml XML NULL
+)	
+
+GO
+
+CREATE PROCEDURE UserDefinedTableStoredProcedure 
+
+	@UserDefinedTableParameter AllTypesUDT READONLY
+
+AS
+BEGIN
+
+	SELECT * FROM @UserDefinedTableParameter
+
+END

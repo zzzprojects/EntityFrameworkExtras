@@ -86,6 +86,9 @@
     <Compile Include="Integration\ParameterVarCharTests.cs" />
     <Compile Include="Integration\ParameterXmlTests.cs" />
     <Compile Include="Integration\ParameteUniqueIdentifier​​Tests.cs" />
+    <Compile Include="Integration\StoredProcedures\UserDefinedTableStoredProcedureReturn.cs" />
+    <Compile Include="Integration\StoredProcedures\AllTypesUdt.cs" />
+    <Compile Include="Integration\StoredProcedures\UserDefinedTableStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\AllTypesStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\NoneExistingStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\AllTypesStoredProcedureReturn.cs" />
@@ -93,9 +96,11 @@
     <Compile Include="Integration\ParameterDirectionTests.DirectionDefault.cs" />
     <Compile Include="Integration\StoredProcedures\ParameterDirectionStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\ParameterDirectionStoredProcedureReturn.cs" />
+    <Compile Include="Integration\StoredProcedures\ParameterSizeStoredProcedure.cs" />
+    <Compile Include="Integration\StoredProcedures\ParameterSizeStoredProcedureReturn.cs" />
     <Compile Include="Integration\StoredProcedureTests.cs" />
+    <Compile Include="Integration\UserDefinedParameterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StoredProceduresTests.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

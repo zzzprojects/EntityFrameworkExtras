@@ -2,7 +2,7 @@
 
 namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
 {
-    public class AllTypesStoredProcedureReturn
+    public class UserDefinedTableStoredProcedureReturn
     {
         public String ParameterNvarChar { get; set; }
         public Int64? ParameterBigInt { get; set; }
@@ -26,6 +26,7 @@ namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
         public Decimal? ParameterSmallMoney { get; set; }
         public String ParameterText { get; set; }
         public TimeSpan? ParameterTime { get; set; }
+        public Byte[] ParameterTimestamp { get; set; }
         public Byte? ParameterTinyInt { get; set; }
         public Guid? ParameterUniqueIdentifier { get; set; }
         public Byte[] ParameterVarBinary { get; set; }

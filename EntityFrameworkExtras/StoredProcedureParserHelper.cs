@@ -34,15 +34,19 @@ namespace EntityFrameworkExtras
 
         public Type GetCollectionType(Type type)
         {
-            foreach (Type interfaceType in type.GetInterfaces())
+            if (type.IsGenericType)
             {
-                if (interfaceType.IsGenericType
-                    && interfaceType.GetGenericTypeDefinition() == typeof(List<>))
+                foreach (Type interfaceType in type.GetInterfaces())
                 {
-                    return interfaceType.GetGenericArguments()[0];
+                    if (interfaceType.GetGenericTypeDefinition() == typeof (IList<>))
+                    {
+                        return interfaceType.GetGenericArguments()[0];
+                    }
                 }
             }
+
             return null;
+             
         }
 
         public object GetUserDefinedTableValue(PropertyInfo propertyInfo, object storedProcedure)

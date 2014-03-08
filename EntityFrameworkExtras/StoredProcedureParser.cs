@@ -116,7 +116,7 @@ namespace EntityFrameworkExtras
             {
                 Direction = direction,
                 IsNullable = !mandatory,
-                Size = size
+                Size = size,
             };
 
             if (isUserDefinedTableParameter)
