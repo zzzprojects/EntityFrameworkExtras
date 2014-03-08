@@ -1,14 +1,12 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.Entity;
-using EntityFrameworkExtras;
 
 namespace EntityFrameworkExtras.Tests
 {
+    //TODO: Write UDT tests 
+
     [TestClass]
     public class StoredProceduresTests
     {
@@ -19,37 +17,6 @@ namespace EntityFrameworkExtras.Tests
         {
             context = new DbContext("ConnectionString");
         }
-
-
-        [TestMethod]
-        public void Execute_Stored_Procedure_Without_Error()
-        {
-            var proc = new AddMemberStoredProcedure()
-            {
-                FirstName = "Michael",
-                LastName = "Rodda",
-                Age = 29
-            };
-
-            context.Database.ExecuteStoredProcedure(proc);
-
-            Assert.AreEqual(1, 1); //no exception occured            
-        }
-
-        [StoredProcedure("sp_AddMember")]
-        public class AddMemberStoredProcedure
-        {
-            [StoredProcedureParameter(SqlDbType.NVarChar)]
-            public string FirstName { get; set; }
-
-            [StoredProcedureParameter(SqlDbType.NVarChar)]
-            public string LastName { get; set; }
-
-            [StoredProcedureParameter(SqlDbType.Int)]
-            public int Age { get; set; }
-        }
-
-
 
         [TestMethod]
         public void Execute_Stored_Procedure_With_UDT_Without_Error()
@@ -101,29 +68,6 @@ namespace EntityFrameworkExtras.Tests
 
             [UserDefinedTableTypeColumn(4, "IsPrimary")]
             public bool? IsPrimary { get; set; }
-
-        }
-        
-
-        [TestMethod]
-        public void Execute_Stored_Procedure_With_Output_Parameter_Without_Error()
-        {
-            var proc = new GetMemberAgesStoredProcedure();
-
-            context.Database.ExecuteStoredProcedure(proc);
-
-            Assert.AreEqual(29, proc.Age);  
-        }
-
-        [StoredProcedure("sp_GetOldestAge")]
-        public class GetMemberAgesStoredProcedure
-        {
-            public string AnotherProperty { get; set; }
-
-            public decimal? AdditionalValue { get; set; }
-
-            [StoredProcedureParameter(SqlDbType.Int, Direction = ParameterDirection.Output)]
-            public int Age { get; set; }
 
         }
 

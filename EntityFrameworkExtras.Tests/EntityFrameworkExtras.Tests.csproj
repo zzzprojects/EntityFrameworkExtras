@@ -37,6 +37,9 @@
       <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -50,12 +53,51 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Integration\DatabaseIntegrationTests.cs" />
+    <Compile Include="Integration\ParameterBigIntTests.cs" />
+    <Compile Include="Integration\ParameterBinaryTests.cs" />
+    <Compile Include="Integration\ParameterBitTests.cs" />
+    <Compile Include="Integration\ParameterCharTests.cs" />
+    <Compile Include="Integration\ParameterDateTests.cs" />
+    <Compile Include="Integration\ParameterDateTime2Tests.cs" />
+    <Compile Include="Integration\ParameterDateTimeOffsetTests.cs" />
+    <Compile Include="Integration\ParameterDateTimeTests.cs" />
+    <Compile Include="Integration\ParameterDecimalTests.cs" />
+    <Compile Include="Integration\ParameterDirectionTests.DirectionReturn.cs" />
+    <Compile Include="Integration\ParameterDirectionTests.DirectionOutput.cs" />
+    <Compile Include="Integration\ParameterDirectionTests.DirectionInputOutput.cs" />
+    <Compile Include="Integration\ParameterDirectionTests.DirectionInput.cs" />
+    <Compile Include="Integration\ParameterFloatTests.cs" />
+    <Compile Include="Integration\ParameterImageTests.cs" />
+    <Compile Include="Integration\ParameterIntTests.cs" />
+    <Compile Include="Integration\ParameterMoneyTests.cs" />
+    <Compile Include="Integration\ParameterNCharTests.cs" />
+    <Compile Include="Integration\ParameterNTextTests.cs" />
+    <Compile Include="Integration\ParameterNvarCharTests.cs" />
+    <Compile Include="Integration\ParameterRealTests.cs" />
+    <Compile Include="Integration\ParameterSizeTests.cs" />
+    <Compile Include="Integration\ParameterSmallDateTimeTests.cs" />
+    <Compile Include="Integration\ParameterSmallIntTests.cs" />
+    <Compile Include="Integration\ParameterSmallMoneyTests.cs" />
+    <Compile Include="Integration\ParameterTextTests.cs" />
+    <Compile Include="Integration\ParameterTimeTests.cs" />
+    <Compile Include="Integration\ParameterTinyIntTests.cs" />
+    <Compile Include="Integration\ParameterVarBinaryTests.cs" />
+    <Compile Include="Integration\ParameterVarCharTests.cs" />
+    <Compile Include="Integration\ParameterXmlTests.cs" />
+    <Compile Include="Integration\ParameteUniqueIdentifier​​Tests.cs" />
+    <Compile Include="Integration\StoredProcedures\AllTypesStoredProcedure.cs" />
+    <Compile Include="Integration\StoredProcedures\NoneExistingStoredProcedure.cs" />
+    <Compile Include="Integration\StoredProcedures\AllTypesStoredProcedureReturn.cs" />
+    <Compile Include="Integration\StoredProcedures\NoParametersStoredProcedure.cs" />
+    <Compile Include="Integration\ParameterDirectionTests.DirectionDefault.cs" />
+    <Compile Include="Integration\StoredProcedures\ParameterDirectionStoredProcedure.cs" />
+    <Compile Include="Integration\StoredProcedures\ParameterDirectionStoredProcedureReturn.cs" />
+    <Compile Include="Integration\StoredProcedureTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredProceduresTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StoredProcedures\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
@@ -64,6 +106,9 @@
       <Project>{7a59ae4f-751f-4be0-ba70-020072f1409e}</Project>
       <Name>EntityFrameworkExtras</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Integration\IntegrationSqlScript.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

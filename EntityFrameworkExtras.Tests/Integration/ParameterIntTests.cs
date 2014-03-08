@@ -1,0 +1,41 @@
+﻿using EntityFrameworkExtras.Tests.Integration.StoredProcedures;
+using NUnit.Framework;
+
+namespace EntityFrameworkExtras.Tests.Integration
+{
+    [TestFixture]
+    public class ParameterIntTests : DatabaseIntegrationTests
+    {
+
+        [Test]
+        public void Parameter_Execute_NoErrors()
+        {
+            var procedure = new AllTypesStoredProcedure();
+
+            procedure.ParameterInt = 653;
+
+            Assert.DoesNotThrow(() => ExecuteStoredProcedure(procedure));
+        }
+
+        [Test]
+        public void Parameter_ExecuteAsNull_NoErrors()
+        {
+            var procedure = new AllTypesStoredProcedure();
+            procedure.ParameterInt = null;
+
+            Assert.DoesNotThrow(() => ExecuteStoredProcedure(procedure));
+        }
+
+        [Test]
+        public void Parameter_Execute_CorrectValueSet()
+        {
+            var procedure = new AllTypesStoredProcedure();
+            procedure.ParameterInt = 777;
+
+            var result = ExecuteStoredProcedureSingle<AllTypesStoredProcedureReturn>(procedure);
+
+            Assert.AreEqual(777, result.ParameterInt);
+        }
+       
+    }
+}

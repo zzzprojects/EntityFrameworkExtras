@@ -37,7 +37,7 @@ namespace EntityFrameworkExtras
             foreach (Type interfaceType in type.GetInterfaces())
             {
                 if (interfaceType.IsGenericType
-                    && interfaceType.GetGenericTypeDefinition() == typeof(IList<>))
+                    && interfaceType.GetGenericTypeDefinition() == typeof(List<>))
                 {
                     return interfaceType.GetGenericArguments()[0];
                 }
