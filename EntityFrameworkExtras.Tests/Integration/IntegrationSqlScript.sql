@@ -322,6 +322,98 @@ CREATE PROCEDURE UserDefinedTableStoredProcedure
 AS
 BEGIN
 
-	SELECT * FROM @UserDefinedTableParameter
+	DECLARE @ReturnValues TABLE 
+	(
+		ParameterNvarchar NVARCHAR(MAX) NULL,
+		ParameterBigInt BIGINT NULL,
+	    ParameterBinary BINARY(26) NULL,
+	    ParameterBit BIT NULL,
+	    ParameterChar CHAR(10) NULL,
+	    ParameterDate DATE NULL,
+		ParameterDateTime DATETIME NULL,
+		ParameterDateTime2 DATETIME2 NULL,
+		ParameterDateTimeOffset DATETIMEOFFSET NULL,
+		ParameterDecimal DECIMAL NULL,
+	    ParameterFloat FLOAT NULL,
+		ParameterImage IMAGE NULL,
+		ParameterInt INT NULL,
+		ParameterMoney MONEY NULL,
+		ParameterNChar NCHAR(10) NULL,
+		ParameterNText NTEXT NULL,
+		ParameterReal REAL NULL,
+		ParameterSmallDateTime SMALLDATETIME NULL,
+		ParameterSmallInt SMALLINT NULL,
+		ParameterSmallMoney SMALLMONEY NULL,
+		ParameterText TEXT NULL,
+		ParameterTime TIME NULL,
+		ParameterTinyInt TINYINT NULL,
+		ParameterUniqueIdentifier UNIQUEIDENTIFIER NULL,
+		ParameterVarBinary VARBINARY(100) NULL,
+		ParameterVarChar VARCHAR(100) NULL,
+		ParameterXml XML NULL
+)	
+
+	INSERT INTO 
+	@ReturnValues (
+		ParameterNvarchar,
+		ParameterBigInt,
+		ParameterBinary,
+		ParameterBit,
+		ParameterChar,
+		ParameterDate,
+		ParameterDateTime,
+		ParameterDateTime2,
+		ParameterDateTimeOffset,
+		ParameterDecimal,
+		ParameterFloat,
+		ParameterImage,
+		ParameterInt,
+		ParameterMoney,
+		ParameterNChar,
+		ParameterNText,
+		ParameterReal,
+		ParameterSmallDateTime,
+		ParameterSmallInt,
+		ParameterSmallMoney,
+		ParameterText,
+		ParameterTime,
+		ParameterTinyInt,
+		ParameterUniqueIdentifier,
+		ParameterVarBinary,
+		ParameterVarChar,
+		ParameterXml
+	)
+	SELECT 	
+		ParameterNvarchar,
+		ParameterBigInt,
+		ParameterBinary,
+		ParameterBit,
+		ParameterChar,
+		ParameterDate,
+		ParameterDateTime,
+		ParameterDateTime2,
+		ParameterDateTimeOffset,
+		ParameterDecimal,
+		ParameterFloat,
+		ParameterImage,
+		ParameterInt,
+		ParameterMoney,
+		ParameterNChar,
+		ParameterNText,
+		ParameterReal,
+		ParameterSmallDateTime,
+		ParameterSmallInt,
+		ParameterSmallMoney,
+		ParameterText,
+		ParameterTime,
+		ParameterTinyInt,
+		ParameterUniqueIdentifier,
+		ParameterVarBinary,
+		ParameterVarChar,
+		ParameterXml
+	
+	FROM @UserDefinedTableParameter
+
+	SELECT * FROM @ReturnValues
 
 END
