@@ -54,18 +54,33 @@ namespace EntityFrameworkExtras
 
         private static void SetOutputParameterValues(IEnumerable<SqlParameter> sqlParameters, object storedProcedure)
         {
-            foreach (var sqlParameter in sqlParameters.Where(p => p.Direction != ParameterDirection.Input))
+            foreach (SqlParameter sqlParameter in sqlParameters.Where(p => p.Direction != ParameterDirection.Input))
             {
-                PropertyInfo propertyInfo = storedProcedure.GetType().GetProperty(sqlParameter.ParameterName.Substring(1));
+                PropertyInfo propertyInfo = GetMatchingProperty(storedProcedure, sqlParameter);
 
                 if (propertyInfo != null)
                 {
-                    propertyInfo.SetValue(storedProcedure, 
-                        (sqlParameter.Value == DBNull.Value) ? 
-                        GetDefault(propertyInfo.PropertyType) : 
-                        sqlParameter.Value, null);                   
+                    propertyInfo.SetValue(storedProcedure,
+                        (sqlParameter.Value == DBNull.Value) ?
+                        GetDefault(propertyInfo.PropertyType) :
+                        sqlParameter.Value, null);
                 }
             }
+        }
+
+        private static PropertyInfo GetMatchingProperty(object storedProcedure, SqlParameter parameter)
+        {
+            foreach (PropertyInfo propertyInfo in storedProcedure.GetType().GetProperties().Where(p => p.HasAttribute<StoredProcedureParameterAttribute>()))
+            {
+                var helper = new StoredProcedureParserHelper();
+
+                var name = helper.GetParameterName(propertyInfo);
+
+                if (parameter.ParameterName.Substring(1) == name)
+                    return propertyInfo;
+            }
+
+            return null;
         }
 
         private static object GetDefault(Type type)

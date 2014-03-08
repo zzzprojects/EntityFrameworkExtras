@@ -103,8 +103,7 @@ namespace EntityFrameworkExtras.Tests
             public bool? IsPrimary { get; set; }
 
         }
-
-
+        
 
         [TestMethod]
         public void Execute_Stored_Procedure_With_Output_Parameter_Without_Error()
@@ -113,14 +112,19 @@ namespace EntityFrameworkExtras.Tests
 
             context.Database.ExecuteStoredProcedure(proc);
 
-            Assert.AreEqual(1, 1); //no exception occured            
+            Assert.AreEqual(29, proc.Age);  
         }
 
         [StoredProcedure("sp_GetOldestAge")]
         public class GetMemberAgesStoredProcedure
         {
+            public string AnotherProperty { get; set; }
+
+            public decimal? AdditionalValue { get; set; }
+
             [StoredProcedureParameter(SqlDbType.Int, Direction = ParameterDirection.Output)]
             public int Age { get; set; }
+
         }
 
 

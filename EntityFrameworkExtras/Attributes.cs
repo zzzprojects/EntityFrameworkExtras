@@ -20,6 +20,13 @@ namespace EntityFrameworkExtras
             return GetAttribute<T>(attributes);
         }
 
+        public static bool HasAttribute<T>(this PropertyInfo propertyInfo) where T : Attribute
+        {
+            var attr = GetAttribute<T>(propertyInfo);
+
+            return attr != null;
+        }
+        
         private static T GetAttribute<T>(object[] attributes) where T : Attribute
         {
             if (!attributes.Any())
@@ -29,5 +36,6 @@ namespace EntityFrameworkExtras
 
             return attribute;
         }
+
     }
 }
