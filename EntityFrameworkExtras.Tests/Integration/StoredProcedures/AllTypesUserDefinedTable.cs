@@ -4,7 +4,7 @@ using System.Data;
 namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
 {
     [UserDefinedTableType("AllTypesUDT")]
-    public class AllTypesUDT
+    public class AllTypesUserDefinedTable
     {
    
         [UserDefinedTableTypeColumn(1)]
@@ -88,4 +88,6 @@ namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
         [UserDefinedTableTypeColumn(27)]
         public String ParameterXml { get; set; }
     }
+
+
 }

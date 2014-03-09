@@ -1,7 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Security.Cryptography.X509Certificates;
-using EntityFrameworkExtras.Tests.Integration.StoredProcedures;
+﻿using EntityFrameworkExtras.Tests.Integration.StoredProcedures;
 using NUnit.Framework;
 
 namespace EntityFrameworkExtras.Tests.Integration

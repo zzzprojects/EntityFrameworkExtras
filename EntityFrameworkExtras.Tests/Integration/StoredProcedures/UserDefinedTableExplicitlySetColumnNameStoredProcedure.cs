@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 
 namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
 {
     [StoredProcedure("UserDefinedTableStoredProcedure")]
-    public class UserDefinedTableStoredProcedure
+    public class UserDefinedTableExplicitlySetColumnNameStoredProcedure
     {
         [StoredProcedureParameter(SqlDbType.Udt)]
-        public List<AllTypesUserDefinedTable> UserDefinedTableParameter { get; set; }
+        public List<ExplicitySetColumnNamesUserDefinedTable> UserDefinedTableParameter { get; set; }
     }
 }

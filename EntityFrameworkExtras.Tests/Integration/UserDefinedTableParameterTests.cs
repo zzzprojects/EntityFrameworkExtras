@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace EntityFrameworkExtras.Tests.Integration
 {
     [TestFixture]
-    public class UserDefinedParameterTests : DatabaseIntegrationTests
+    public partial class UserDefinedTableParameterTests : DatabaseIntegrationTests
     {
 
         [Test]
@@ -14,9 +14,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterNvarChar = "England"
                 }
@@ -32,9 +32,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterBigInt = 555
                 }
@@ -51,9 +51,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterBinary = GetBytes("Kourtney Wood")
                 }
@@ -70,9 +70,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterBit = true
                 }
@@ -88,9 +88,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterChar = "Mike Rodda"
                 }
@@ -106,9 +106,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterDate = new DateTime(2014,03,08)
                 }
@@ -124,9 +124,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterDateTime = new DateTime(2014,03,08, 12, 15, 3)
                 }
@@ -142,9 +142,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterDateTime2 = new DateTime(2014,03,08, 12, 15, 3)
                 }
@@ -160,9 +160,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterDateTimeOffset = new DateTimeOffset(2014, 5, 2, 9, 4, 8, new TimeSpan(0, 13, 22 , 0))
                 }
@@ -178,9 +178,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterDecimal = 452m
                 }
@@ -196,9 +196,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterFloat = 87
                 }
@@ -214,9 +214,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterImage = GetBytes("Test Image")
                 }
@@ -233,9 +233,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterInt = 45
                 }
@@ -252,9 +252,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterMoney = 64.99m
                 }
@@ -270,9 +270,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterNChar = "Michael"
                 }
@@ -288,9 +288,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterNText = "Michael Rodda"
                 }
@@ -306,9 +306,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterReal = 45
                 }
@@ -324,9 +324,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterSmallDateTime = new DateTime(2014,03,08)
                 }
@@ -342,9 +342,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterSmallInt = 45
                 }
@@ -361,9 +361,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterText = "James Bond"
                 }
@@ -379,9 +379,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterTime = new TimeSpan(0, 2,88,2)
                 }
@@ -397,9 +397,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterTinyInt = 88
                 }
@@ -416,9 +416,9 @@ namespace EntityFrameworkExtras.Tests.Integration
             var proc = new UserDefinedTableStoredProcedure();
 
             var uniqueIdentifier = Guid.NewGuid();
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterUniqueIdentifier = uniqueIdentifier
                 }
@@ -435,9 +435,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterVarBinary = GetBytes("James Bond")
                 }
@@ -453,9 +453,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterVarChar = "EntityFramework"
                 }
@@ -471,9 +471,9 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var proc = new UserDefinedTableStoredProcedure();
 
-            proc.UserDefinedTableParameter = new List<AllTypesUDT>()
+            proc.UserDefinedTableParameter = new List<AllTypesUserDefinedTable>()
             {
-                new AllTypesUDT()
+                new AllTypesUserDefinedTable()
                 {
                     ParameterXml = "<EntityFramework />"
                 }
@@ -484,12 +484,5 @@ namespace EntityFrameworkExtras.Tests.Integration
             Assert.AreEqual("<EntityFramework />", result.ParameterXml);
         }
 
-
-        private byte[] GetBytes(string str)
-        {
-            byte[] bytes = new byte[str.Length * sizeof(char)];
-            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-            return bytes;
-        }
     }
 }

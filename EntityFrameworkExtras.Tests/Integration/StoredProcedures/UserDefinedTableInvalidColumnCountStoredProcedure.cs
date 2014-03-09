@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 
 namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
 {
     [StoredProcedure("UserDefinedTableStoredProcedure")]
-    public class UserDefinedTableStoredProcedure
+    public class UserDefinedTableInvalidColumnCountStoredProcedure
     {
         [StoredProcedureParameter(SqlDbType.Udt)]
-        public List<AllTypesUserDefinedTable> UserDefinedTableParameter { get; set; }
+        public List<InvalidColumnCountUserDefinedTable> UserDefinedTableParameter { get; set; } 
     }
 }

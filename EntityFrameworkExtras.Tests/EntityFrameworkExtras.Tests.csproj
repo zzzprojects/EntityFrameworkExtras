@@ -86,8 +86,12 @@
     <Compile Include="Integration\ParameterVarCharTests.cs" />
     <Compile Include="Integration\ParameterXmlTests.cs" />
     <Compile Include="Integration\ParameteUniqueIdentifier​​Tests.cs" />
+    <Compile Include="Integration\StoredProcedures\ExplicitySetColumnNamesUserDefinedTable.cs" />
+    <Compile Include="Integration\StoredProcedures\InvalidColumnCountUserDefinedTable.cs" />
+    <Compile Include="Integration\StoredProcedures\UserDefinedTableInvalidColumnCountStoredProcedure.cs" />
+    <Compile Include="Integration\StoredProcedures\UserDefinedTableExplicitlySetColumnNameStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\UserDefinedTableStoredProcedureReturn.cs" />
-    <Compile Include="Integration\StoredProcedures\AllTypesUdt.cs" />
+    <Compile Include="Integration\StoredProcedures\AllTypesUserDefinedTable.cs" />
     <Compile Include="Integration\StoredProcedures\UserDefinedTableStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\AllTypesStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\NoneExistingStoredProcedure.cs" />
@@ -99,7 +103,8 @@
     <Compile Include="Integration\StoredProcedures\ParameterSizeStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\ParameterSizeStoredProcedureReturn.cs" />
     <Compile Include="Integration\StoredProcedureTests.cs" />
-    <Compile Include="Integration\UserDefinedParameterTests.cs" />
+    <Compile Include="Integration\UserDefinedTableTypeColumnTests.cs" />
+    <Compile Include="Integration\UserDefinedTableParameterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
