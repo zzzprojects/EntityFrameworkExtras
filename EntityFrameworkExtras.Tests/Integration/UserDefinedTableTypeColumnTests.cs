@@ -63,7 +63,7 @@ namespace EntityFrameworkExtras.Tests.Integration
                     {
                         NvarChar = "Theses Columns Names were Explicity Set",
                         BigInt = 1000,
-                        Binary = GetBytes("Mike Rodda")
+                        Binary = GetBytes("michael rodda")
                     }
                 };
 
@@ -71,7 +71,7 @@ namespace EntityFrameworkExtras.Tests.Integration
 
             Assert.AreEqual("Theses Columns Names were Explicity Set", result.ParameterNvarChar);
             Assert.AreEqual(1000, result.ParameterBigInt);
-            Assert.AreEqual(GetBytes("Mike Rodda"), result.ParameterBinary);
+            Assert.AreEqual(GetBytes("michael rodda"), result.ParameterBinary);
 
         }
     }
