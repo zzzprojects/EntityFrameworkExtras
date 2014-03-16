@@ -277,56 +277,6 @@ END
 GO
 
 
-CREATE PROCEDURE OuputParameterSizeStoredProcedure
-
-	@ParameterDirectionDefault NVARCHAR(MAX) = NULL,
-	@ParameterDirectionInput NVARCHAR(MAX) = NULL,
-	@ParameterDirectionInputOutput NVARCHAR(MAX) = NULL OUTPUT,
-	@ParameterDirectionOutput NVARCHAR(MAX) = NULL OUTPUT,
-	@ParameterDirectionReturnValue NVARCHAR(MAX) = NULL OUTPUT 
-
-AS
-BEGIN 
-
-	/*
-	DECLARE @ReturnValues TABLE
-	(
-	    ParameterSizeNotSet NVARCHAR(10) NULL,	
-	    ParameterSizeSetTo5 NVARCHAR(10) NULL,
-	    ParameterSizeSetTo10 NVARCHAR(10) NULL,
-	    ParameterSizeSetTo20 NVARCHAR(10) NULL
-	)
-	
-	INSERT @ReturnValues(
-		ParameterSizeNotSet,
-		ParameterSizeSetTo5,
-		ParameterSizeSetTo10,
-		ParameterSizeSetTo20	
-	)
-	VALUES (
-		@ParameterSizeNotSet,
-		@ParameterSizeSetTo5,
-		@ParameterSizeSetTo10,
-		@ParameterSizeSetTo20
-	)
-
-	
-	SELECT * FROM @ReturnValues
-	*/
-
-	SET @ParameterDirectionDefault = 'DirectionDefaultValue'
-	SET @ParameterDirectionInputOutput = 'DirectionInputOutputValue'
-	SET @ParameterDirectionInput = 'DirectionInputValue'
-	SET @ParameterDirectionOutput = 'DirectionOutputValue'	
-	SET @ParameterDirectionReturnValue = 'DirectionReturnValue'
-
-
-END
-
-GO
-
-
-
 /***********************************/
 /*	   UDT Direction Tests	       */
 /***********************************/
