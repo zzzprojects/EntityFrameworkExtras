@@ -2,6 +2,9 @@ using System.Data;
 
 namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
 {
+    /// <summary>
+    /// All parameters in the stored procedure are set to 10 e.g. ParameterSizeNotSet NVARCHAR(10)
+    /// </summary>
     [StoredProcedure("ParameterSizeStoredProcedure")]
     public class ParameterSizeStoredProcedure
     {

@@ -88,6 +88,7 @@
     <Compile Include="Integration\ParameteUniqueIdentifier​​Tests.cs" />
     <Compile Include="Integration\StoredProcedures\ExplicitySetColumnNamesUserDefinedTable.cs" />
     <Compile Include="Integration\StoredProcedures\InvalidColumnCountUserDefinedTable.cs" />
+    <Compile Include="Integration\StoredProcedures\OutputParameterSizeStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\UserDefinedTableInvalidColumnCountStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\UserDefinedTableExplicitlySetColumnNameStoredProcedure.cs" />
     <Compile Include="Integration\StoredProcedures\UserDefinedTableStoredProcedureReturn.cs" />
