@@ -45,7 +45,7 @@ CREATE PROCEDURE AllTypesStoredProcedure
 
 	@ParameterNvarchar NVARCHAR(MAX) = NULL,
 	@ParameterBigInt BIGINT = NULL,
-	@ParameterBinary BINARY(26) = NULL,
+	@ParameterBinary BINARY(13) = NULL,
 	@ParameterBit BIT = NULL,
 	@ParameterChar CHAR(10) = NULL,
 	@ParameterDate DATE = NULL,
@@ -80,7 +80,7 @@ BEGIN
 	(
 		ParameterNvarchar NVARCHAR(MAX) NULL,
 		ParameterBigInt BIGINT NULL,
-	    ParameterBinary BINARY(26) NULL,
+	    ParameterBinary BINARY(13) NULL,
 	    ParameterBit BIT NULL,
 	    ParameterChar CHAR(10) NULL,
 	    ParameterDate DATE NULL,
@@ -277,15 +277,77 @@ END
 GO
 
 
+CREATE PROCEDURE AllTypesParameterOutputStoredProcedure
+
+	@ParameterNvarchar NVARCHAR(MAX) = NULL OUTPUT,
+	@ParameterBigInt BIGINT = NULL OUTPUT,
+	@ParameterBinary BINARY(13) = NULL OUTPUT,
+	@ParameterBit BIT = NULL OUTPUT,
+	@ParameterChar CHAR(10) = NULL OUTPUT,
+	@ParameterDate DATE = NULL OUTPUT,
+	@ParameterDateTime DATETIME = NULL OUTPUT,
+	@ParameterDateTime2 DATETIME2 = NULL OUTPUT,
+	@ParameterDateTimeOffset DATETIMEOFFSET = NULL OUTPUT,
+	@ParameterDecimal DECIMAL = NULL OUTPUT,
+	@ParameterFloat FLOAT = NULL OUTPUT,	
+	@ParameterInt INT = NULL OUTPUT,
+	@ParameterMoney MONEY = NULL OUTPUT,
+	@ParameterNChar NCHAR(3) = NULL OUTPUT,
+	@ParameterReal REAL = NULL OUTPUT,
+	@ParameterSmallDateTime SMALLDATETIME = NULL OUTPUT,
+	@ParameterSmallInt SMALLINT = NULL OUTPUT,
+	@ParameterSmallMoney SMALLMONEY = NULL OUTPUT,
+	@ParameterTime TIME = NULL OUTPUT,
+	@ParameterTinyInt TINYINT = NULL OUTPUT,
+	@ParameterUniqueIdentifier UNIQUEIDENTIFIER = NULL OUTPUT,
+	@ParameterVarBinary VARBINARY(100) = NULL OUTPUT,
+	@ParameterVarChar VARCHAR(100) = NULL OUTPUT,
+	@ParameterXml XML = NULL OUTPUT
+
+
+AS
+BEGIN 
+
+	SET @ParameterNvarchar = 'ParameterNvarcharValue'
+	SET @ParameterBigInt = 111222333444
+	SET @ParameterBinary = CAST('michael rodda' AS BINARY(13))
+	SET @ParameterBit = 1
+	SET @ParameterChar = CAST('abcdefghij' AS CHAR(10))
+	SET @ParameterDate = CAST('20140603' AS DATE)
+	SET @ParameterDateTime = CAST('1990-12-04 06:44:04' AS DATETIME)
+	SET @ParameterDateTime2 = CAST('1968-10-23 12:45:37.123' AS DATETIME2)
+	SET @ParameterDateTimeOffset = CAST('2007-05-08 12:35:29.123 +12:15' AS DATETIMEOFFSET)
+	SET @ParameterDecimal = 555
+	SET @ParameterFloat = 897
+	SET @ParameterInt = 25
+	SET @ParameterMoney = 1300
+	SET @ParameterNChar = 'Cat'
+	SET @ParameterReal = 6649
+	SET @ParameterSmallDateTime = CAST('1995-03-15 12:01:00' AS SMALLDATETIME)
+	SET @ParameterSmallInt = 9
+	SET @ParameterSmallMoney = 200
+	SET @ParameterTime = CAST('13:03:02' AS TIME)
+	SET @ParameterTinyInt = 12
+	SET @ParameterUniqueIdentifier = '692623c2-a71e-453f-98c6-432c67835ba4'
+	SET @ParameterVarBinary = CAST('mike rodda' AS VARBINARY(10))
+	SET @ParameterVarChar = 'Once upon a time'
+	SET @ParameterXml = '<Some><Xml></Xml></Some>'
+
+
+END
+ 
+
 /***********************************/
 /*	   UDT Direction Tests	       */
 /***********************************/
+
+GO
 
 CREATE TYPE AllTypesUDT AS TABLE 
 	(
 		ParameterNvarchar NVARCHAR(MAX) NULL,
 		ParameterBigInt BIGINT NULL,
-	    ParameterBinary BINARY(26) NULL,
+	    ParameterBinary BINARY(13) NULL,
 	    ParameterBit BIT NULL,
 	    ParameterChar CHAR(10) NULL,
 	    ParameterDate DATE NULL,
@@ -325,7 +387,7 @@ BEGIN
 	(
 		ParameterNvarchar NVARCHAR(MAX) NULL,
 		ParameterBigInt BIGINT NULL,
-	    ParameterBinary BINARY(26) NULL,
+	    ParameterBinary BINARY(13) NULL,
 	    ParameterBit BIT NULL,
 	    ParameterChar CHAR(10) NULL,
 	    ParameterDate DATE NULL,

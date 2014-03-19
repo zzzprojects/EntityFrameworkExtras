@@ -116,7 +116,7 @@ namespace EntityFrameworkExtras
             {
                 Direction = direction,
                 IsNullable = !mandatory,
-                Size = size,
+                Size = SetSize(size, direction),
             };
 
             if (isUserDefinedTableParameter)
@@ -125,6 +125,14 @@ namespace EntityFrameworkExtras
                 sqlParameter.SqlDbType = dataType;
 
             return sqlParameter;
+        }
+        
+        private static int SetSize(int size, ParameterDirection direction)
+        {
+            if (direction != ParameterDirection.Input && size == 0) //output parameter
+                return -1;
+
+            return size;
         }
 
 

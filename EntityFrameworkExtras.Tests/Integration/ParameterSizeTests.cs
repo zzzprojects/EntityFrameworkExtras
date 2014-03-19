@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace EntityFrameworkExtras.Tests.Integration
 {
     [TestFixture]
-    public class ParameterSizeTests : DatabaseIntegrationTests
+    public partial class ParameterSizeTests : DatabaseIntegrationTests
     {
         [Test]
         public void Execute_SizeNotSet_CorrectValueReturned()
@@ -52,4 +52,6 @@ namespace EntityFrameworkExtras.Tests.Integration
         }
         
     }
+
+
 }

@@ -34,13 +34,25 @@ namespace EntityFrameworkExtras.Tests.Integration
         [Test]
         public void Execute_DirectionInputOutputParameterSizeLessThenValueSet_ValueReturnedShouldBeTrimmed()
         {
-            var procedure = new OutputParameterSizeStoredProcedure();
+            var procedure = new OutputParameterSizeSetStoredProcedure();
 
             // procedure.ParameterDirectionInputOutput - This parameters size is set to 10
 
             ExecuteStoredProcedureSingle<ParameterDirectionStoredProcedureReturn>(procedure);
 
             Assert.AreEqual("DirectionI", procedure.ParameterDirectionInputOutput);
+        }
+
+        [Test]
+        public void Execute_DirectionInputOutputParameterSizeNotSet_DefaultsToMaximumSize()
+        {
+            var procedure = new OutputParameterSizeNotSetStoredProcedure();
+
+            // procedure.ParameterDirectionInputOutput - No size set
+
+            ExecuteStoredProcedureSingle<ParameterDirectionStoredProcedureReturn>(procedure);
+
+            Assert.AreEqual("DirectionInputOutputValue", procedure.ParameterDirectionInputOutput);
         }
     }
 }
