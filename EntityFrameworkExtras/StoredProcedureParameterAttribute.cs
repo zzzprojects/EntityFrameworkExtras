@@ -39,9 +39,7 @@ namespace EntityFrameworkExtras
         public StoredProcedureParameterOptions Options { get; set; }
 
         /// <summary>
-        /// Specifies the Max Size for the SqlParameter, which is required for execution when this error occurs: "String[1]: the Size property has an invalid size of 0."
-        /// More Info: http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlparameter.size(v=vs.110).aspx
-        /// For varchar(max), use -1: http://stackoverflow.com/questions/973260/what-size-do-you-use-for-varcharmax-in-your-parameter-declaration
+        /// Size of the parameter, typically used for output parameters. If an output parameter has a size of 0 then its default to -1 (equivalent to MAX)
         /// </summary>
         public int Size { get; set; }
 
