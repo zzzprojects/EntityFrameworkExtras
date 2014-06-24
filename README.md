@@ -103,5 +103,6 @@ int age = proc.Age; //Is now the oldest age
 * https://github.com/thomasvanderhoofWork - Thomas
 * https://github.com/dimeptr - Dimeptr
 * https://github.com/kalahari - Blake
-
+* https://github.com/jurkrit - Jurkrit
+* https://github.com/Mark-SH - Mark
 
