@@ -1,13 +1,17 @@
 EntityFrameworkExtras
 =====================
 
-###### Currently EntityFramework 6 isn't supported due to a change with the SqlQuery<> method. This is currently being worked on. Stay tune! 
-
 EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
 
+### Nuget
+
+* Entity Framework 4 - https://www.nuget.org/packages/EntityFrameworkExtras/
+* Entity Framework 5 - https://www.nuget.org/packages/EntityFrameworkExtras.EF5/
+* Entity Framework 6 - https://www.nuget.org/packages/EntityFrameworkExtras.EF6/ 
 
 ###Executing a Stored Procedure with a User Defined Table Type###
+
 
 
 * Define a stored procedure class
