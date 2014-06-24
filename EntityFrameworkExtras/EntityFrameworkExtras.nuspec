@@ -2,12 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>EntityFrameworkExtras</id>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
         <title>EntityFramework Extras</title>
         <authors>Michael Rodda</authors>
         <owners>Michael Rodda</owners>
+        <iconUrl>https://lh4.googleusercontent.com/UVTiaEfA2se3vwmSSciR5VkwSWrcGGO2Hoxzb71enq2S6QwOQMwLRV53bgX8-OANpn73KA=w1168-h792</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
+        <description>EntityFrameworkExtras  provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
 github: https://github.com/Fodsuk/EntityFrameworkExtras (See Changelog!)
 
@@ -16,11 +17,11 @@ contact: fodsuk at hotmail dot com</description>
         <releaseNotes>EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
 https://github.com/Fodsuk/EntityFrameworkExtras</releaseNotes>
-        <copyright>Copyright ©  2012</copyright>
+        <copyright>Copyright ©  2014</copyright>
         <language>en-GB</language>
-        <tags>EntityFramework StoredProcedure</tags>
+        <tags>EntityFramework StoredProcedure EF Database</tags>
         <dependencies>
-            <dependency id="EntityFramework" />
+            <dependency id="EntityFramework" version="(,4.3.1]" />
         </dependencies>
     </metadata>
 </package>
