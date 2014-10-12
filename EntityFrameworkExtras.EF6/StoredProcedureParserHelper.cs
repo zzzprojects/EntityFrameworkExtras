@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 
 namespace EntityFrameworkExtras.EF6
@@ -36,13 +37,14 @@ namespace EntityFrameworkExtras.EF6
         {
             if (type.IsGenericType)
             {
-                foreach (Type interfaceType in type.GetInterfaces())
+                if (type.IsInterface && type.GetGenericTypeDefinition() == typeof(IEnumerable<>))
                 {
-                    if (interfaceType.GetGenericTypeDefinition() == typeof (IList<>))
-                    {
-                        return interfaceType.GetGenericArguments()[0];
-                    }
+                    return type.GetGenericArguments().First();
                 }
+                
+                return type.GetInterfaces()
+                    .Where(x => x.IsGenericType)
+                    .First(x => x.GetGenericTypeDefinition() == typeof (IEnumerable<>)).GetGenericArguments().First();
             }
 
             return null;
