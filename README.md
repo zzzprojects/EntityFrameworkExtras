@@ -17,7 +17,7 @@ EntityFrameworkExtras provides some useful additions to EntityFramework such as 
 * Define a stored procedure class
 
 ~~~
-[StoredProcedure("sp_AddMemberWithAddresses")]
+[StoredProcedure("storedproc_AddMemberWithAddresses")]
 public class AddMemberStoredWithAddressesProcedure
 {
   [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "ForeName")]
@@ -78,7 +78,7 @@ context.Database.ExecuteStoredProcedure(proc);
 * To add an Output parameter you just need to set the Direction parameter to ParameterDirection.Output. 
 
 ~~~
-[StoredProcedure("sp_GetOldestAge")]
+[StoredProcedure("storedProc_GetOldestAge")]
 public class GetOldestAgeStoredProcedure
 {
 	[StoredProcedureParameter(SqlDbType.Int, Direction = ParameterDirection.Output)]
