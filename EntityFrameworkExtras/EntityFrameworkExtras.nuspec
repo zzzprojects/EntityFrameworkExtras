@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>EntityFrameworkExtras</id>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
         <title>EntityFramework Extras</title>
         <authors>Michael Rodda</authors>
         <owners>Michael Rodda</owners>
@@ -10,9 +10,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>EntityFrameworkExtras  provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
-github: https://github.com/Fodsuk/EntityFrameworkExtras (See Changelog!)
-
-contact: fodsuk at hotmail dot com</description>
+github: https://github.com/Fodsuk/EntityFrameworkExtras (See Changelog!)</description>
         <summary>EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.</summary>
         <releaseNotes>EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
