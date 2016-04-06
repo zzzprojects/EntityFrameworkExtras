@@ -52,6 +52,29 @@ namespace EntityFrameworkExtras
             return result;
         }
 
+        /// <summary>
+        /// Executes the specified stored procedure against a database
+        /// and returns a DbDataReader.  Used for procedures returning multiple result sets.
+        /// </summary>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <returns></returns>
+        public static System.Data.Common.DbDataReader ExecuteReader(this Database database, object storedProcedure)
+        {
+            if (storedProcedure == null)
+                throw new ArgumentNullException("storedProcedure");
+
+            var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
+
+            using (var cmd = database.Connection.CreateCommand())
+            {
+                cmd.CommandText = info.Sql;
+                cmd.Parameters.AddRange(info.SqlParameters);
+
+                return cmd.ExecuteReader();
+            }
+        }
+
         private static void SetOutputParameterValues(IEnumerable<SqlParameter> sqlParameters, object storedProcedure)
         {
             foreach (SqlParameter sqlParameter in sqlParameters.Where(p => p.Direction != ParameterDirection.Input))
