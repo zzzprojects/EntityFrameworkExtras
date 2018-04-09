@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30129.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras", "EntityFrameworkExtras\EntityFrameworkExtras.csproj", "{7A59AE4F-751F-4BE0-BA70-020072F1409E}"
 EndProject
@@ -25,6 +25,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{A1210DB1
 	ProjectSection(SolutionItems) = preProject
 		icon.png = icon.png
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF7", "EF7", "{527B58B9-9F1F-4C83-BDEE-2C40638641F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF7", "EntityFrameworkExtras.EF7\EntityFrameworkExtras.EF7.csproj", "{1E7E0154-C797-4BED-A0AE-CEDB187C4588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF7.Tests", "EntityFrameworkExtras.EF7.Tests\EntityFrameworkExtras.EF7.Tests.csproj", "{82C2D842-AECC-48B2-89EF-40144302E18B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,17 +62,30 @@ Global
 		{44BA0CDB-A85D-4657-A935-7D57D6F0EEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44BA0CDB-A85D-4657-A935-7D57D6F0EEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44BA0CDB-A85D-4657-A935-7D57D6F0EEF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7E0154-C797-4BED-A0AE-CEDB187C4588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7E0154-C797-4BED-A0AE-CEDB187C4588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7E0154-C797-4BED-A0AE-CEDB187C4588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7E0154-C797-4BED-A0AE-CEDB187C4588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C2D842-AECC-48B2-89EF-40144302E18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C2D842-AECC-48B2-89EF-40144302E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C2D842-AECC-48B2-89EF-40144302E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C2D842-AECC-48B2-89EF-40144302E18B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB} = {AAC9AB41-E68D-4E4A-A848-4A72AA2978D2}
 		{7A59AE4F-751F-4BE0-BA70-020072F1409E} = {AAC9AB41-E68D-4E4A-A848-4A72AA2978D2}
+		{8522B7EB-3D2D-4E43-BA3D-3F16095B8EFB} = {AAC9AB41-E68D-4E4A-A848-4A72AA2978D2}
 		{7ED1D61C-9396-4663-952D-D2F7DAD19B19} = {9EC06092-6237-42AE-B0C1-7CF5974368A2}
 		{B0C9B99B-0C3C-4E72-85D7-12BCD185C067} = {9EC06092-6237-42AE-B0C1-7CF5974368A2}
 		{357C473A-D606-4A9B-8C5F-17DEB6FFB006} = {90962F79-D846-4F3D-9255-2F28A36D089C}
 		{44BA0CDB-A85D-4657-A935-7D57D6F0EEF9} = {90962F79-D846-4F3D-9255-2F28A36D089C}
+		{1E7E0154-C797-4BED-A0AE-CEDB187C4588} = {527B58B9-9F1F-4C83-BDEE-2C40638641F5}
+		{82C2D842-AECC-48B2-89EF-40144302E18B} = {527B58B9-9F1F-4C83-BDEE-2C40638641F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95088284-D241-4A23-BD03-BE4C342B92F0}
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
