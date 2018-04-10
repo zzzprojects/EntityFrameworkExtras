@@ -1,28 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
-        <id>EntityFrameworkExtras.EF7</id>
-        <version>1.0.0</version>
-        <title>EntityFramework Extras EF7</title>
-        <authors>Michael Rodda, Rory Hallman</authors>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>EntityFrameworkExtras.EF7</id>
+    <version>1.0.0</version>
+	<title>EntityFramework Extras EF7</title>
+    <authors>Michael Rodda, Rory Hallman</authors>
         <owners>Michael Rodda</owners>
-        <iconUrl>https://lh4.googleusercontent.com/UVTiaEfA2se3vwmSSciR5VkwSWrcGGO2Hoxzb71enq2S6QwOQMwLRV53bgX8-OANpn73KA=w1168-h792</iconUrl>
+        <iconUrl>http://icons.iconarchive.com/icons/fasticon/leopard-iphone/256/Generic-Share-Folder-icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>EntityFrameworkExtras.EF7 provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
+        <description>This is a fork from https://github.com/Fodsuk/EntityFrameworkExtras. EntityFrameworkExtras.EF7 provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
-          github: https://github.com/rhallman/EntityFrameworkExtras (See Changelog!)
-
+          github: https://github.com/rhallman/EntityFrameworkExtras
+          
           contact: fodsuk at hotmail dot com</description>
         <summary>EntityFrameworkExtras.EF7 provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.</summary>
-        <releaseNotes>EntityFrameworkExtras.EF7 provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
-          https://github.com/Fodsuk/EntityFrameworkExtras
+        <releaseNotes>EntityFrameworkExtras.EF7 provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters. This release 
+		  includes updates for EF 7 targeting Core 2.0
+          https://github.com/rhallman/EntityFrameworkExtras
         </releaseNotes>
-        <copyright>Copyright ©  2014</copyright>
+        <copyright>Copyright ©  2018</copyright>
         <language>en-GB</language>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+       <projectUrl>https://github.com/Fodsuk/EntityFrameworkExtras</projectUrl>
         <tags>EntityFramework StoredProcedure EF Database</tags>
-        <dependencies>
-            <dependency id="Microsoft.EntityFrameworkCore" version="[2.0.0,)" />
-          <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="[2.0.0,)" />
-        </dependencies>
-    </metadata>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
 </package>
