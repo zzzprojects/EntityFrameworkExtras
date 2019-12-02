@@ -70,6 +70,11 @@ namespace EntityFrameworkExtras.EF7
             {
                 command.CommandText = query;
                 command.CommandType = CommandType.Text;
+                int? commandTimeout = database.GetCommandTimeout();
+                if (commandTimeout.HasValue)
+                {
+                    command.CommandTimeout = commandTimeout.Value;
+                }
                 command.Parameters.AddRange(parameters);
                 database.OpenConnection();
 
