@@ -1,10 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+
+#if EF4 || EF5 || EF6
+using System.Data.Entity;
+using System.Data.SqlClient;
+#elif EFCORE
+using System.Data.Common;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+#endif
 
 #if EF4
 namespace EntityFrameworkExtras
@@ -12,6 +20,8 @@ namespace EntityFrameworkExtras
 namespace EntityFrameworkExtras.EF5
 #elif EF6
 namespace EntityFrameworkExtras.EF6
+#elif EFCORE
+namespace EntityFrameworkExtras.EFCore
 #endif
 {
     /// <summary>
@@ -24,7 +34,11 @@ namespace EntityFrameworkExtras.EF6
         /// </summary>
         /// <param name="database">The database to execute against.</param>
         /// <param name="storedProcedure">The stored procedure to execute.</param>
+#if EFCORE
+        public static void ExecuteStoredProcedure(this DatabaseFacade database, object storedProcedure)
+#else
         public static void ExecuteStoredProcedure(this Database database, object storedProcedure)
+#endif
         {
             if (storedProcedure == null)
                 throw new ArgumentNullException("storedProcedure");
@@ -44,6 +58,65 @@ namespace EntityFrameworkExtras.EF6
         /// <param name="database">The database to execute against.</param>
         /// <param name="storedProcedure">The stored procedure to execute.</param>
         /// <returns></returns>
+#if EFCORE
+        public static IEnumerable<T> ExecuteStoredProcedure<T>(this DatabaseFacade database, object storedProcedure)
+        {
+            if (storedProcedure == null)
+                throw new ArgumentNullException("storedProcedure");
+
+
+            List<T> result = new List<T>();
+            var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
+
+
+            // from : https://github.com/Fodsuk/EntityFrameworkExtras/pull/23/commits/dce354304aa9a95750f7d2559d1b002444ac46f7
+            using (var command = database.GetDbConnection().CreateCommand())
+            {
+	            command.CommandText = info.Sql;
+	            command.CommandType = CommandType.Text;
+	            command.Parameters.AddRange(info.SqlParameters);
+	            database.OpenConnection();
+
+	            using (var resultReader = command.ExecuteReader())
+	            {
+		            T obj = default(T);
+
+		            while (resultReader.Read())
+		            {
+			            obj = Activator.CreateInstance<T>();
+			            foreach (PropertyInfo prop in obj.GetType().GetProperties())
+			            {
+				            var val = GetValue(resultReader, prop.Name);
+				            if (!object.Equals(val, DBNull.Value))
+				            {
+					            prop.SetValue(obj, val, null);
+				            }
+			            }
+
+			            result.Add(obj);
+		            }
+	            }
+
+            } 
+
+            SetOutputParameterValues(info.SqlParameters, storedProcedure);
+
+            return result;
+        }
+
+        // from : https://github.com/Fodsuk/EntityFrameworkExtras/pull/23/commits/dce354304aa9a95750f7d2559d1b002444ac46f7
+        private static object GetValue(this DbDataReader reader, string name)
+        {
+	        object val = DBNull.Value;
+
+	        try
+	        {
+		        val = reader[name];
+	        }
+	        catch (Exception) { }
+	        return val;
+        }
+#else
         public static IEnumerable<T> ExecuteStoredProcedure<T>(this Database database, object storedProcedure)
         {
             if (storedProcedure == null)
@@ -57,6 +130,7 @@ namespace EntityFrameworkExtras.EF6
 
             return result;
         }
+#endif
 
         private static void SetOutputParameterValues(IEnumerable<SqlParameter> sqlParameters, object storedProcedure)
         {

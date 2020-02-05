@@ -9,6 +9,8 @@ namespace EntityFrameworkExtras
 namespace EntityFrameworkExtras.EF5
 #elif EF6
 namespace EntityFrameworkExtras.EF6
+#elif EFCORE
+namespace EntityFrameworkExtras.EFCore
 #endif
 {
     internal class StoredProcedureParserHelper

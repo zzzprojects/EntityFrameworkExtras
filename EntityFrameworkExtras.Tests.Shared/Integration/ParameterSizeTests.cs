@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using EntityFrameworkExtras.Tests.Integration.StoredProcedures;
+﻿using EntityFrameworkExtras.Tests.Integration.StoredProcedures;
 using NUnit.Framework;
 
 namespace EntityFrameworkExtras.Tests.Integration

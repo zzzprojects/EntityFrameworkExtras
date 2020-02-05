@@ -2,9 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+
+#if EF4 || EF5 || EF6
+using System.Data.SqlClient;
+#elif EFCORE
+using Microsoft.Data.SqlClient;
+#endif
 
 #if EF4
 namespace EntityFrameworkExtras
@@ -12,6 +17,8 @@ namespace EntityFrameworkExtras
 namespace EntityFrameworkExtras.EF5
 #elif EF6
 namespace EntityFrameworkExtras.EF6
+#elif EFCORE
+namespace EntityFrameworkExtras.EFCore
 #endif
 {
     internal class StoredProcedureParser

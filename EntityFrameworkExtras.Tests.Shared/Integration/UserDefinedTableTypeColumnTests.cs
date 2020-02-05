@@ -45,7 +45,11 @@ namespace EntityFrameworkExtras.Tests.Integration
 
                 ExecuteStoredProcedure(proc);
             }
+#if EFCORE
+            catch (Microsoft.Data.SqlClient.SqlException exception)
+#else
             catch (SqlException exception)
+#endif
             {
                 Assert.AreEqual("Trying to pass a table-valued parameter with 4 column(s) where the corresponding user-defined table type requires 27 column(s).",
                     exception.Message);

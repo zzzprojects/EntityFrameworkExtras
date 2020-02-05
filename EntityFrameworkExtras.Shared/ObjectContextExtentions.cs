@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !EFCORE
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -99,3 +101,4 @@ namespace EntityFrameworkExtras.EF6
         }
     }
 }
+#endif

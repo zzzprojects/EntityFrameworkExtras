@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{A1210DB1-1B13-47B4-B21B-9C08300DCD23}"
+	ProjectSection(SolutionItems) = preProject
+		icon.png = icon.png
+	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EntityFrameworkExtras.Shared", "EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.shproj", "{770FA648-FA98-455D-8BF7-9832C9EDE9C6}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EntityFrameworkExtras.Tests.Shared", "EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.shproj", "{8189D203-89F3-4D02-B028-F76CE37C9FDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFCore", "EFCore", "{9E15663E-75C8-43B6-8236-4847A2685D42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore3", "EntityFrameworkExtras.EFCore3\EntityFrameworkExtras.EFCore3.csproj", "{C1144C22-BE1B-4179-B667-51C7D14A3E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EFCore3.Tests", "EntityFrameworkExtras.EFCore3.Tests\EntityFrameworkExtras.EFCore3.Tests.csproj", "{59943B99-772A-47E4-AA70-6D758312C00C}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{59943b99-772a-47e4-aa70-6d758312c00c}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{770fa648-fa98-455d-8bf7-9832c9ede9c6}*SharedItemsImports = 13
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8189d203-89f3-4d02-b028-f76ce37c9fdb}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1144C22-BE1B-4179-B667-51C7D14A3E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1144C22-BE1B-4179-B667-51C7D14A3E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1144C22-BE1B-4179-B667-51C7D14A3E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1144C22-BE1B-4179-B667-51C7D14A3E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59943B99-772A-47E4-AA70-6D758312C00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59943B99-772A-47E4-AA70-6D758312C00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59943B99-772A-47E4-AA70-6D758312C00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59943B99-772A-47E4-AA70-6D758312C00C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1144C22-BE1B-4179-B667-51C7D14A3E41} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+		{59943B99-772A-47E4-AA70-6D758312C00C} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FEFCD82-1FCB-4477-90F7-A935BF59298B}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

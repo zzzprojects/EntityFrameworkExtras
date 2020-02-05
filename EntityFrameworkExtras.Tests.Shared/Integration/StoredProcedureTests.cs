@@ -20,7 +20,11 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var procedure = new NoneExistingStoredProcedure();
 
+#if EFCORE
+            Assert.Throws<Microsoft.Data.SqlClient.SqlException>(() => ExecuteStoredProcedure(procedure), "Could not find stored procedure 'NoneExistingStoredProcedure'.");
+#else
             Assert.Throws<System.Data.SqlClient.SqlException>(() => ExecuteStoredProcedure(procedure), "Could not find stored procedure 'NoneExistingStoredProcedure'.");
+#endif
         }
 
         [Test]
@@ -32,7 +36,11 @@ namespace EntityFrameworkExtras.Tests.Integration
 
                 ExecuteStoredProcedure(procedure);
             }
+#if EFCORE
+            catch (Microsoft.Data.SqlClient.SqlException exception)
+#else
             catch (System.Data.SqlClient.SqlException exception)
+#endif
             {
                 Assert.AreEqual("Could not find stored procedure 'NoneExistingStoredProcedure'.", exception.Message);
             }

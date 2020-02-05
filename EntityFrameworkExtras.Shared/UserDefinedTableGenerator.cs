@@ -11,6 +11,8 @@ namespace EntityFrameworkExtras
 namespace EntityFrameworkExtras.EF5
 #elif EF6
 namespace EntityFrameworkExtras.EF6
+#elif EFCORE
+namespace EntityFrameworkExtras.EFCore
 #endif
 {
     public class UserDefinedTableGenerator
@@ -68,7 +70,7 @@ namespace EntityFrameworkExtras.EF6
                 foreach (ColumnInformation column in columns)
                 {
                     object value = column.Property.GetValue(o, null);
-                    row.SetField(column.Name, value);
+                    row[column.Name] = (object)value ?? DBNull.Value;
                 }
             }
         }
