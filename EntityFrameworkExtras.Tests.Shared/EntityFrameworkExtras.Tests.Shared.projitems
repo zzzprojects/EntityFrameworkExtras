@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8189d203-89f3-4d02-b028-f76ce37c9fdb</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>EntityFrameworkExtras.Tests.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\DatabaseIntegrationTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterBigIntTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterBinaryTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterBitTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterCharTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDateTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDateTime2Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDateTimeOffsetTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDateTimeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDecimalTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDirectionTests.DirectionDefault.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDirectionTests.DirectionInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDirectionTests.DirectionInputOutput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDirectionTests.DirectionOutput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterDirectionTests.DirectionReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterFloatTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterImageTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterIntTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterMoneyTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterNCharTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterNTextTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterNvarCharTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterRealTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterSizeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterSizeTests.OutputParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterSmallDateTimeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterSmallIntTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterSmallMoneyTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterTextTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterTimeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterTinyIntTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterVarBinaryTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterVarCharTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameterXmlTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ParameteUniqueIdentifier​​Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\AllTypesParameterOutputStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\AllTypesStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\AllTypesStoredProcedureReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\AllTypesUserDefinedTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\ExplicitySetColumnNamesUserDefinedTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\InvalidColumnCountUserDefinedTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\NoneExistingStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\NoParametersStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\OutputParameterSizeNotSetStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\OutputParameterSizeSetStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\ParameterDirectionStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\ParameterDirectionStoredProcedureReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\ParameterSizeStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\ParameterSizeStoredProcedureReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\UserDefinedTableExplicitlySetColumnNameStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\UserDefinedTableInvalidColumnCountStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\UserDefinedTableStoredProcedure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedures\UserDefinedTableStoredProcedureReturn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\StoredProcedureTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\UserDefinedTableParameterTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\UserDefinedTableTypeColumnTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Integration\IntegrationSqlScript.sql" />
+  </ItemGroup>
+</Project>

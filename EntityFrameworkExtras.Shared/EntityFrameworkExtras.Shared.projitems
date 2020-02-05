@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>770fa648-fa98-455d-8bf7-9832c9ede9c6</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>EntityFrameworkExtras.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Attributes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ColumnInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DatabaseExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectContextExtentions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureParameterAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureParameterInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureParameterOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureParserHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserDefinedTableGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserDefinedTableTypeAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserDefinedTableTypeColumnAttribute.cs" />
+  </ItemGroup>
+</Project>
