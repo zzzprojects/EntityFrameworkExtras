@@ -7,6 +7,11 @@ using System.Reflection;
 #if EF4 || EF5 || EF6
 using System.Data.Entity;
 using System.Data.SqlClient;
+#elif EFCORE_2X
+using System.Data.Common;
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 #elif EFCORE
 using System.Data.Common;
 using Microsoft.Data.SqlClient;

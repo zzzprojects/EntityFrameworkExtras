@@ -165,9 +165,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityFrameworkExtras.EFCore3\EntityFrameworkExtras.EFCore3.csproj">
-      <Project>{c1144c22-be1b-4179-b667-51c7d14a3e41}</Project>
-      <Name>EntityFrameworkExtras.EFCore3</Name>
+    <ProjectReference Include="..\EntityFrameworkExtras.EFCore3.NetStandard20\EntityFrameworkExtras.EFCore3.NetStandard20.csproj">
+      <Project>{992957e5-4e42-4e90-b510-2c3e3ca56b25}</Project>
+      <Name>EntityFrameworkExtras.EFCore3.NetStandard20</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems" Label="Shared" />

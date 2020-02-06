@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-#if EF4 || EF5 || EF6
+#if EF4 || EF5 || EF6 || EFCORE_2X
 using System.Data.SqlClient;
 #elif EFCORE
 using Microsoft.Data.SqlClient;
