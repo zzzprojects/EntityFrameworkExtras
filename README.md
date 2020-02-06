@@ -24,7 +24,7 @@ EntityFrameworkExtras provides some useful additions to EntityFramework such as 
 * Entity Framework 5 - https://www.nuget.org/packages/EntityFrameworkExtras.EF5/
 * Entity Framework 6 - https://www.nuget.org/packages/EntityFrameworkExtras.EF6/ 
 
-###Executing a Stored Procedure with a User Defined Table Type###
+### Executing a Stored Procedure with a User Defined Table Type
 
 
 
@@ -87,7 +87,7 @@ context.Database.ExecuteStoredProcedure(proc);
 
 
 
-###Executing a Stored Procedure with a Output parameter###
+### Executing a Stored Procedure with a Output parameter
 
 * To add an Output parameter you just need to set the Direction parameter to ParameterDirection.Output. 
 
@@ -111,7 +111,7 @@ int age = proc.Age; //Is now the oldest age
 ~~~
 
 
-###Thanks to the contributors!###
+### Thanks to the contributors!
 
 * https://github.com/JoeBrockhaus - Joe
 * https://github.com/thomasvanderhoofWork - Thomas
