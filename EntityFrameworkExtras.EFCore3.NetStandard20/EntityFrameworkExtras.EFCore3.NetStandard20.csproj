@@ -18,6 +18,8 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;EFCORE</DefineConstants>
+    <OutputPath>bin\Release\netstandard2.0\</OutputPath>
+    <DocumentationFile>bin\Release\netstandard2.0\EntityFrameworkExtras.EFCore.xml</DocumentationFile>
   </PropertyGroup>
 
   <Import Project="..\EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems" Label="Shared" />
