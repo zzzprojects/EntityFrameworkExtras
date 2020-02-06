@@ -18,7 +18,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;EFCORE EFCORE_2X</DefineConstants>
-    <OutputPath>bin\Release\netstandard2.0\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>bin\Release\netstandard2.0\EntityFrameworkExtras.EFCore.xml</DocumentationFile>
   </PropertyGroup>
 

@@ -19,7 +19,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;EFCORE</DefineConstants>
-    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>bin\Release\netstandard2.1\EntityFrameworkExtras.EFCore.xml</DocumentationFile>
   </PropertyGroup>
 
