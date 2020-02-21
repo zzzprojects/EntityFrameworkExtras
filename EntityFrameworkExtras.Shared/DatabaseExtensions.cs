@@ -135,7 +135,11 @@ namespace EntityFrameworkExtras.EFCore
 
             return result;
         }
-#endif
+#endif  
+        public static T ExecuteStoredProcedureSingle<T>(this Database database, object storedProcedure)
+        {
+            return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
+        }
 
         private static void SetOutputParameterValues(IEnumerable<SqlParameter> sqlParameters, object storedProcedure)
         {

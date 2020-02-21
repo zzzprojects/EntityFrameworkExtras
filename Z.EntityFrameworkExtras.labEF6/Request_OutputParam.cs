@@ -82,9 +82,9 @@ END
 			using (var context = new EntityContext())
 			{
 				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2 };
-				var entity = context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
+				var entity = context.Database.ExecuteStoredProcedureSingle<EntitySimple>(proc_Get_EntitySimple);
 				var output = proc_Get_EntitySimple.ParameterInt;
-			}
+			} 
 		}
 
 		public class EntityContext : DbContext
