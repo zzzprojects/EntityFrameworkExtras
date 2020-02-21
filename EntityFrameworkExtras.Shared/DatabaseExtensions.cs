@@ -121,6 +121,11 @@ namespace EntityFrameworkExtras.EFCore
 	        catch (Exception) { }
 	        return val;
         }
+
+        public static T ExecuteStoredProcedureSingle<T>(this DatabaseFacade database, object storedProcedure)
+        {
+            return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
+        }
 #else
         public static IEnumerable<T> ExecuteStoredProcedure<T>(this Database database, object storedProcedure)
         {
@@ -129,17 +134,17 @@ namespace EntityFrameworkExtras.EFCore
 
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
-            List<T> result = database.SqlQuery<T>(info.Sql, info.SqlParameters).ToList();
+            IEnumerable<T> result = database.SqlQuery<T>(info.Sql, info.SqlParameters).ToList();
 
             SetOutputParameterValues(info.SqlParameters, storedProcedure);
 
             return result;
         }
-#endif  
         public static T ExecuteStoredProcedureSingle<T>(this Database database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
         }
+#endif  
 
         private static void SetOutputParameterValues(IEnumerable<SqlParameter> sqlParameters, object storedProcedure)
         {
