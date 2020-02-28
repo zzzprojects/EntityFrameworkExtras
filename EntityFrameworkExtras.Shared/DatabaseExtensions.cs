@@ -122,7 +122,7 @@ namespace EntityFrameworkExtras.EFCore
 	        return val;
         }
 
-        public static T ExecuteStoredProcedureSingle<T>(this DatabaseFacade database, object storedProcedure)
+        public static T ExecuteStoredProcedureFirstOrDefault<T>(this DatabaseFacade database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
         }
@@ -140,7 +140,7 @@ namespace EntityFrameworkExtras.EFCore
 
             return result;
         }
-        public static T ExecuteStoredProcedureSingle<T>(this Database database, object storedProcedure)
+        public static T ExecuteStoredProcedureFirstOrDefault<T>(this Database database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
         }
