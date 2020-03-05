@@ -134,7 +134,8 @@ namespace EntityFrameworkExtras.EFCore
 
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
-            IEnumerable<T> result = database.SqlQuery<T>(info.Sql, info.SqlParameters).ToList();
+            // need resolution for info.SqlParameters when a paramater have direction output.
+            List<T> result = database.SqlQuery<T>(info.Sql, info.SqlParameters).ToList();
 
             SetOutputParameterValues(info.SqlParameters, storedProcedure);
 
