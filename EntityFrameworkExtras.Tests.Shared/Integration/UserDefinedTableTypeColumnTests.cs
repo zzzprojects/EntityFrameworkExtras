@@ -17,7 +17,7 @@ namespace EntityFrameworkExtras.Tests.Integration
             {
                 new AllTypesUserDefinedTable()
                 {
-                    ParameterDecimal = 555m /* ParameterDecimal - Column 10 */
+                    ParameterDecimal = 555.01m /* ParameterDecimal - Column 10 */
                 }
             };
 

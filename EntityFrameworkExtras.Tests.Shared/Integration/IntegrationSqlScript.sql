@@ -52,7 +52,7 @@ CREATE PROCEDURE AllTypesStoredProcedure
 	@ParameterDateTime DATETIME = NULL,
 	@ParameterDateTime2 DATETIME2 = NULL,
 	@ParameterDateTimeOffset DATETIMEOFFSET = NULL,
-	@ParameterDecimal DECIMAL = NULL,
+	@ParameterDecimal DECIMAL(5,2) = NULL,
 	@ParameterFloat FLOAT = NULL,
 	@ParameterImage IMAGE = NULL,
 	@ParameterInt INT = NULL,
@@ -87,7 +87,7 @@ BEGIN
 		ParameterDateTime DATETIME NULL,
 		ParameterDateTime2 DATETIME2 NULL,
 		ParameterDateTimeOffset DATETIMEOFFSET NULL,
-		ParameterDecimal DECIMAL NULL,
+		ParameterDecimal DECIMAL(5,2) NULL,
 	    ParameterFloat FLOAT NULL,
 		ParameterImage IMAGE NULL,
 		ParameterInt INT NULL,
@@ -288,7 +288,7 @@ CREATE PROCEDURE AllTypesParameterOutputStoredProcedure
 	@ParameterDateTime DATETIME = NULL OUTPUT,
 	@ParameterDateTime2 DATETIME2 = NULL OUTPUT,
 	@ParameterDateTimeOffset DATETIMEOFFSET = NULL OUTPUT,
-	@ParameterDecimal DECIMAL = NULL OUTPUT,
+	@ParameterDecimal DECIMAL(5,2) = NULL OUTPUT,
 	@ParameterFloat FLOAT = NULL OUTPUT,	
 	@ParameterInt INT = NULL OUTPUT,
 	@ParameterMoney MONEY = NULL OUTPUT,
@@ -317,7 +317,7 @@ BEGIN
 	SET @ParameterDateTime = CAST('1990-12-04 06:44:04' AS DATETIME)
 	SET @ParameterDateTime2 = CAST('1968-10-23 12:45:37.123' AS DATETIME2)
 	SET @ParameterDateTimeOffset = CAST('2007-05-08 12:35:29.123 +12:15' AS DATETIMEOFFSET)
-	SET @ParameterDecimal = 555
+	SET @ParameterDecimal = 555.01  
 	SET @ParameterFloat = 897
 	SET @ParameterInt = 25
 	SET @ParameterMoney = 1300
@@ -354,7 +354,7 @@ CREATE TYPE AllTypesUDT AS TABLE
 		ParameterDateTime DATETIME NULL,
 		ParameterDateTime2 DATETIME2 NULL,
 		ParameterDateTimeOffset DATETIMEOFFSET NULL,
-		ParameterDecimal DECIMAL NULL,
+		ParameterDecimal DECIMAL(5,2) NULL,
 	    ParameterFloat FLOAT NULL,
 		ParameterImage IMAGE NULL,
 		ParameterInt INT NULL,
@@ -394,7 +394,7 @@ BEGIN
 		ParameterDateTime DATETIME NULL,
 		ParameterDateTime2 DATETIME2 NULL,
 		ParameterDateTimeOffset DATETIMEOFFSET NULL,
-		ParameterDecimal DECIMAL NULL,
+		ParameterDecimal DECIMAL(5,2) NULL,
 	    ParameterFloat FLOAT NULL,
 		ParameterImage IMAGE NULL,
 		ParameterInt INT NULL,

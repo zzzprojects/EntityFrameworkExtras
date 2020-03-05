@@ -41,7 +41,7 @@ namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
         [StoredProcedureParameter(SqlDbType.DateTimeOffset)]
         public DateTimeOffset? ParameterDateTimeOffset { get; set; }
 
-        [StoredProcedureParameter(SqlDbType.Decimal)]
+        [StoredProcedureParameter(SqlDbType.Decimal, Precision = 5, Scale = 2)]
         public Decimal? ParameterDecimal { get; set; }
 
         [StoredProcedureParameter(SqlDbType.Float)]
