@@ -56,12 +56,13 @@ namespace EntityFrameworkExtras.EFCore
         /// </summary>
         public string ParameterName { get; set; }
 
+        /// <summary>Gets or sets the direction.</summary>
         public ParameterDirection Direction { get; set; } 
 
-        // NEED TEXT!
-        public byte Precision { get; set; } 
+        /// <summary>Gets or sets the parameter precision.</summary>
+        public byte Precision { get; set; }
 
-        // NEED TEXT!
+        /// <summary>Gets or sets the parameter scale.</summary>
         public byte Scale { get; set; }
     }
 }

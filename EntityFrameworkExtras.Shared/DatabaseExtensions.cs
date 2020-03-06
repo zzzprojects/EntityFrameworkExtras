@@ -122,6 +122,14 @@ namespace EntityFrameworkExtras.EFCore
 	        return val;
         }
 
+        /// <summary>
+        /// Executes the specified stored procedure against a database
+        /// and returns the first or default value
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <returns></returns>
         public static T ExecuteStoredProcedureFirstOrDefault<T>(this DatabaseFacade database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
@@ -134,13 +142,22 @@ namespace EntityFrameworkExtras.EFCore
 
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
-            // need resolution for info.SqlParameters when a paramater have direction output.
+            // TODO: need resolution for info.SqlParameters when a paramater have direction output.
             List<T> result = database.SqlQuery<T>(info.Sql, info.SqlParameters).ToList();
 
             SetOutputParameterValues(info.SqlParameters, storedProcedure);
 
             return result;
         }
+
+        /// <summary>
+        /// Executes the specified stored procedure against a database
+        /// and returns the first or default value
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <returns></returns>
         public static T ExecuteStoredProcedureFirstOrDefault<T>(this Database database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
