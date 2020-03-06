@@ -76,8 +76,10 @@ namespace EntityFrameworkExtras.EFCore
                             SqlDataType = attribute.DataType,
                             PropertyInfo = propertyInfo,
                             Direction = attribute.Direction,
-                            Size = attribute.Size
-                        });
+                            Size = attribute.Size,
+                            Scale = attribute.Scale,
+                            Precision = attribute.Precision
+                    });
                 }
             }
 
@@ -111,10 +113,11 @@ namespace EntityFrameworkExtras.EFCore
                                                                  p.IsMandatory,
                                                                  p.Size,
                                                                  p.IsUserDefinedTable,
-                                                                 p.IsUserDefinedTable ?
-                                                                                    _helper.GetUserDefinedTableType(p.PropertyInfo) : null,
+                                                                 p.IsUserDefinedTable ? _helper.GetUserDefinedTableType(p.PropertyInfo) : null,
                                                                 p.SqlDataType,
-                                                                p.Direction);
+                                                                p.Direction,
+																p.Scale,
+																p.Precision);
 
                 sqlParams.Add(sqlParameter);
             }
@@ -123,7 +126,7 @@ namespace EntityFrameworkExtras.EFCore
         }
 
         private static SqlParameter GenerateSqlParameter(string parameterName, object paramValue, bool mandatory, int size,
-                                           bool isUserDefinedTableParameter, string udtType, SqlDbType dataType, ParameterDirection direction)
+                                           bool isUserDefinedTableParameter, string udtType, SqlDbType dataType, ParameterDirection direction, byte scale, byte precision)
         {
             var sqlParameter = new SqlParameter("@" + parameterName, paramValue ?? DBNull.Value)
             {
@@ -136,6 +139,9 @@ namespace EntityFrameworkExtras.EFCore
                 sqlParameter.TypeName = udtType;
             else
                 sqlParameter.SqlDbType = dataType;
+
+            sqlParameter.Scale = scale;
+            sqlParameter.Precision = precision;
 
             return sqlParameter;
         }

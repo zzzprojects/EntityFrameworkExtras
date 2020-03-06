@@ -12,7 +12,7 @@ namespace EntityFrameworkExtras.Tests.Integration
         {
             var procedure = new AllTypesStoredProcedure();
 
-            procedure.ParameterDecimal = 555m;
+            procedure.ParameterDecimal = 555.01m;
 
             Assert.DoesNotThrow(() => ExecuteStoredProcedure(procedure));
         }

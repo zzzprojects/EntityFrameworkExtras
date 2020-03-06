@@ -19,6 +19,8 @@ namespace EntityFrameworkExtras.EFCore
         internal bool IsMandatory { get; set; }
         internal bool IsUserDefinedTable { get; set; }
         internal int Size { get; set; }
+        internal byte Precision { get; set; }
+        internal byte Scale { get; set; }
         internal PropertyInfo PropertyInfo { get; set; }
     }
 }

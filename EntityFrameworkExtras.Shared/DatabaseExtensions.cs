@@ -121,6 +121,11 @@ namespace EntityFrameworkExtras.EFCore
 	        catch (Exception) { }
 	        return val;
         }
+
+        public static T ExecuteStoredProcedureFirstOrDefault<T>(this DatabaseFacade database, object storedProcedure)
+        {
+            return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
+        }
 #else
         public static IEnumerable<T> ExecuteStoredProcedure<T>(this Database database, object storedProcedure)
         {
@@ -129,13 +134,18 @@ namespace EntityFrameworkExtras.EFCore
 
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
+            // need resolution for info.SqlParameters when a paramater have direction output.
             List<T> result = database.SqlQuery<T>(info.Sql, info.SqlParameters).ToList();
 
             SetOutputParameterValues(info.SqlParameters, storedProcedure);
 
             return result;
         }
-#endif
+        public static T ExecuteStoredProcedureFirstOrDefault<T>(this Database database, object storedProcedure)
+        {
+            return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
+        }
+#endif  
 
         private static void SetOutputParameterValues(IEnumerable<SqlParameter> sqlParameters, object storedProcedure)
         {

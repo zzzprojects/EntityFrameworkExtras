@@ -109,7 +109,7 @@ namespace EntityFrameworkExtras.Tests.Integration
 
             ExecuteStoredProcedure<ParameterSizeStoredProcedureReturn>(proc);
 
-            Assert.AreEqual(555m, proc.ParameterDecimal);
+            Assert.AreEqual(555.01m, proc.ParameterDecimal);
         }
 
         [Test]
