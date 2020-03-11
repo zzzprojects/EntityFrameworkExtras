@@ -10,7 +10,7 @@ namespace Z.EntityFrameworkExtras.labEF6
 	{
 		static void Main(string[] args)
 		{
-			Request_OutputParam.Execute();
+			Request_Enumerable.Execute();
 		}
 	}
 }
