@@ -64,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityFrameworkExtras.EF6\EntityFrameworkExtras.EF6.csproj">
+    <ProjectReference Include="..\EntityFrameworkExtras.EF6.Net45\EntityFrameworkExtras.EF6.Net45.csproj">
       <Project>{7ed1d61c-9396-4663-952d-d2f7dad19b19}</Project>
-      <Name>EntityFrameworkExtras.EF6</Name>
+      <Name>EntityFrameworkExtras.EF6.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

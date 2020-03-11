@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.Tests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF6", "EF6", "{9EC06092-6237-42AE-B0C1-7CF5974368A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF6", "EntityFrameworkExtras.EF6\EntityFrameworkExtras.EF6.csproj", "{7ED1D61C-9396-4663-952D-D2F7DAD19B19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF6.Net45", "EntityFrameworkExtras.EF6.Net45\EntityFrameworkExtras.EF6.Net45.csproj", "{7ED1D61C-9396-4663-952D-D2F7DAD19B19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF4", "EF4", "{AAC9AB41-E68D-4E4A-A848-4A72AA2978D2}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF6.T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF5", "EF5", "{90962F79-D846-4F3D-9255-2F28A36D089C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF5", "EntityFrameworkExtras.EF5\EntityFrameworkExtras.EF5.csproj", "{357C473A-D606-4A9B-8C5F-17DEB6FFB006}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF5.Net45", "EntityFrameworkExtras.EF5.Net45\EntityFrameworkExtras.EF5.Net45.csproj", "{357C473A-D606-4A9B-8C5F-17DEB6FFB006}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF5.Tests", "EntityFrameworkExtras.EF5.Tests\EntityFrameworkExtras.EF5.Tests.csproj", "{44BA0CDB-A85D-4657-A935-7D57D6F0EEF9}"
 EndProject
@@ -44,13 +44,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.EntityFrameworkExtras.labEF6", "Z.EntityFrameworkExtras.labEF6\Z.EntityFrameworkExtras.labEF6.csproj", "{E23EBDE9-6863-4260-95F2-A99C73CE48CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF5.Net40", "EntityFrameworkExtras.EF5.Net40\EntityFrameworkExtras.EF5.Net40.csproj", "{357C473A-D606-4A9B-8C5F-17DEB6FFB005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF6.Net40", "EntityFrameworkExtras.EF6.Net40\EntityFrameworkExtras.EF6.Net40.csproj", "{7ED1D61C-9396-4663-952D-D2F7DAD19B18}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb005}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb006}*SharedItemsImports = 4
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{44ba0cdb-a85d-4657-a935-7d57d6f0eef9}*SharedItemsImports = 4
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{59943b99-772a-47e4-aa70-6d758312c00c}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{770fa648-fa98-455d-8bf7-9832c9ede9c6}*SharedItemsImports = 13
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7a59ae4f-751f-4be0-ba70-020072f1409e}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7ed1d61c-9396-4663-952d-d2f7dad19b18}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7ed1d61c-9396-4663-952d-d2f7dad19b19}*SharedItemsImports = 4
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8189d203-89f3-4d02-b028-f76ce37c9fdb}*SharedItemsImports = 13
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8522b7eb-3d2d-4e43-ba3d-3f16095b8efb}*SharedItemsImports = 4
@@ -109,6 +115,14 @@ Global
 		{E23EBDE9-6863-4260-95F2-A99C73CE48CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E23EBDE9-6863-4260-95F2-A99C73CE48CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E23EBDE9-6863-4260-95F2-A99C73CE48CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{357C473A-D606-4A9B-8C5F-17DEB6FFB005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357C473A-D606-4A9B-8C5F-17DEB6FFB005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{357C473A-D606-4A9B-8C5F-17DEB6FFB005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{357C473A-D606-4A9B-8C5F-17DEB6FFB005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED1D61C-9396-4663-952D-D2F7DAD19B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED1D61C-9396-4663-952D-D2F7DAD19B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED1D61C-9396-4663-952D-D2F7DAD19B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED1D61C-9396-4663-952D-D2F7DAD19B18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +139,8 @@ Global
 		{C4C0A992-318D-4B77-B151-69E18B789A52} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 		{992957E5-4E42-4E90-B510-2C3E3CA56B25} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 		{909F9FC3-3384-467B-9A7D-1B2328080BA8} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+		{357C473A-D606-4A9B-8C5F-17DEB6FFB005} = {90962F79-D846-4F3D-9255-2F28A36D089C}
+		{7ED1D61C-9396-4663-952D-D2F7DAD19B18} = {9EC06092-6237-42AE-B0C1-7CF5974368A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FEFCD82-1FCB-4477-90F7-A935BF59298B}
