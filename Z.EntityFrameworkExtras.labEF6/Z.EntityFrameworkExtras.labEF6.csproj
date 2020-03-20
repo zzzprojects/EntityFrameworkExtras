@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request_Enumerable.cs" />
     <Compile Include="Request_OutputParam.cs" />
+    <Compile Include="Request_storeProcedure_Transaction.cs" />
     <Compile Include="Template.cs" />
   </ItemGroup>
   <ItemGroup>
