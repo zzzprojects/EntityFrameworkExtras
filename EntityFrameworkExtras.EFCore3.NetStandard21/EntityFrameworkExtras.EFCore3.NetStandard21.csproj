@@ -5,7 +5,7 @@
     <AssemblyName>EntityFrameworkExtras.EFCore</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <Version>3.0.1</Version>
+    <Version>3.0.2</Version>
     <Description>EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.</Description>
     <RootNamespace>EntityFrameworkExtras.EFCore</RootNamespace>
     <Company>EntityFrameworkExtras.EFCore</Company>
