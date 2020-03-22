@@ -11,11 +11,13 @@ using System.Data.SqlClient;
 using System.Data.Common;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 #elif EFCORE
 using System.Data.Common;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 #endif
 
@@ -80,6 +82,7 @@ namespace EntityFrameworkExtras.EFCore
 	            command.CommandText = info.Sql;
 	            command.CommandType = CommandType.Text;
 	            command.Parameters.AddRange(info.SqlParameters);
+				command.Transaction = database.CurrentTransaction?.GetDbTransaction();
 	            database.OpenConnection();
 
 	            using (var resultReader = command.ExecuteReader())
