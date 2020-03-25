@@ -20,9 +20,12 @@ EntityFrameworkExtras provides some useful additions to EntityFramework such as 
 
 ### Nuget
 
-* Entity Framework 4 - https://www.nuget.org/packages/EntityFrameworkExtras/
-* Entity Framework 5 - https://www.nuget.org/packages/EntityFrameworkExtras.EF5/
+* Entity Framework Core  - https://www.nuget.org/packages/EntityFrameworkExtras.EFCore/
 * Entity Framework 6 - https://www.nuget.org/packages/EntityFrameworkExtras.EF6/ 
+* Entity Framework 5 - https://www.nuget.org/packages/EntityFrameworkExtras.EF5/
+* Entity Framework 4 - https://www.nuget.org/packages/EntityFrameworkExtras/
+
+
 
 ### Executing a Stored Procedure with a User Defined Table Type
 
