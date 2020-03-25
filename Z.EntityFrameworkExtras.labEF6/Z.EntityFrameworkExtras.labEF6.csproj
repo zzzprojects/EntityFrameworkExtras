@@ -57,6 +57,7 @@
     <Compile Include="My.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request_Async.cs" />
     <Compile Include="Request_Enumerable.cs" />
     <Compile Include="Request_OutputParam.cs" />
     <Compile Include="Request_storeProcedure_Transaction.cs" />
