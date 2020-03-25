@@ -171,7 +171,14 @@ namespace EntityFrameworkExtras.EFCore
         }
 #if !EFCORE_2X
      
-        // Need Text!
+        /// <summary>
+        /// Executes the specified stored procedure against a database asyncrounously
+        /// and returns an enumerable of T representing the data returned.
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <returns></returns>
         public static async Task<IEnumerable<T>> ExecuteStoredProcedureAsync<T>(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default)
         {
 	        if (storedProcedure == null)
@@ -262,7 +269,14 @@ namespace EntityFrameworkExtras.EFCore
 
 #if NET45
 
-		// NEED TEXT!
+        /// <summary>
+        /// Executes the specified stored procedure against a database asyncrhousnouly
+        /// and returns the first or default value
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <returns></returns>
         public static async Task<IEnumerable<T>> ExecuteStoredProcedureAsync<T>(this Database database, object storedProcedure, CancellationToken cancellationToken = default)
         {
             if (storedProcedure == null)
@@ -279,7 +293,7 @@ namespace EntityFrameworkExtras.EFCore
 #endif
 
         /// <summary>
-        /// Executes the specified stored procedure against a database
+        /// Executes the specified stored procedure against a database asynchronously
         /// and returns the first or default value
         /// </summary>
         /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
