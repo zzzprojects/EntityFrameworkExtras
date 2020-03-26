@@ -82,7 +82,15 @@ namespace EntityFrameworkExtras.EFCore
 #endif
 
 #if EFCORE && !EFCORE_2X
-		// NEED TEXT!
+        /// <summary>
+        /// Executes the specified stored procedure against a database
+        /// and returns an enumerable of T representing the data returned.
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
         public static async Task ExecuteStoredProcedureAsync(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default)
         {
             if (storedProcedure == null)
@@ -101,7 +109,15 @@ namespace EntityFrameworkExtras.EFCore
 #endif
 
 #if NET45
-        // NEED TEXT! 
+        /// <summary>
+        /// Executes the specified stored procedure against a database
+        /// and returns an enumerable of T representing the data returned.
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
         public static async Task ExecuteStoredProcedureAsync(this Database database, object storedProcedure, CancellationToken cancellationToken  = default)
         {
             if (storedProcedure == null)
@@ -178,6 +194,7 @@ namespace EntityFrameworkExtras.EFCore
         /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
         /// <param name="database">The database to execute against.</param>
         /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         public static async Task<IEnumerable<T>> ExecuteStoredProcedureAsync<T>(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default)
         {
@@ -251,6 +268,22 @@ namespace EntityFrameworkExtras.EFCore
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Executes the specified stored procedure against a database asynchronously
+        /// and returns the first or default value
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
+        public static async Task<T> ExecuteStoredProcedureFirstOrDefaultAsync<T>(this Database database, object storedProcedure, CancellationToken cancellationToken = default)
+        {
+            var executed = await database.ExecuteStoredProcedureAsync<T>(storedProcedure, cancellationToken).ConfigureAwait(false);
+
+            return executed.FirstOrDefault();
+        }
 #else
         public static IEnumerable<T> ExecuteStoredProcedure<T>(this Database database, object storedProcedure)
         {
@@ -276,6 +309,7 @@ namespace EntityFrameworkExtras.EFCore
         /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
         /// <param name="database">The database to execute against.</param>
         /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         public static async Task<IEnumerable<T>> ExecuteStoredProcedureAsync<T>(this Database database, object storedProcedure, CancellationToken cancellationToken = default)
         {
@@ -293,7 +327,7 @@ namespace EntityFrameworkExtras.EFCore
 #endif
 
         /// <summary>
-        /// Executes the specified stored procedure against a database asynchronously
+        /// Executes the specified stored procedure against a database
         /// and returns the first or default value
         /// </summary>
         /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
@@ -303,6 +337,22 @@ namespace EntityFrameworkExtras.EFCore
         public static T ExecuteStoredProcedureFirstOrDefault<T>(this Database database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Executes the specified stored procedure against a database asynchronously
+        /// and returns the first or default value
+        /// </summary>
+        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
+        public static async Task<T> ExecuteStoredProcedureFirstOrDefaultAsync<T>(this Database database, object storedProcedure, CancellationToken cancellationToken = default)
+        {
+            var executed = await database.ExecuteStoredProcedureAsync<T>(storedProcedure, cancellationToken).ConfigureAwait(false);
+
+            return executed.FirstOrDefault();
         }
 #endif  
 
