@@ -11,6 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Attributes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ColumnInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DatabaseExtensions.EFCore3x.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DatabaseExtensions.NetFramework.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DatabaseExtensions.EFCore2x.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DatabaseExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObjectContextExtentions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StoredProcedureAttribute.cs" />

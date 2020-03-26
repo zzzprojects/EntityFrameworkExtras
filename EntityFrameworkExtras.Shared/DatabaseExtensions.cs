@@ -43,7 +43,7 @@ namespace EntityFrameworkExtras.EFCore
     /// <summary>
     /// Extension methods for the Entity Framework Database class.
     /// </summary>
-    public static class DatabaseExtensions
+    public static partial class DatabaseExtensions
     {
         /// <summary>
         /// Executes the specified stored procedure against a database. 
@@ -337,22 +337,6 @@ namespace EntityFrameworkExtras.EFCore
         public static T ExecuteStoredProcedureFirstOrDefault<T>(this Database database, object storedProcedure)
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Executes the specified stored procedure against a database asynchronously
-        /// and returns the first or default value
-        /// </summary>
-        /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
-        /// <param name="database">The database to execute against.</param>
-        /// <param name="storedProcedure">The stored procedure to execute.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns></returns>
-        public static async Task<T> ExecuteStoredProcedureFirstOrDefaultAsync<T>(this Database database, object storedProcedure, CancellationToken cancellationToken = default)
-        {
-            var executed = await database.ExecuteStoredProcedureAsync<T>(storedProcedure, cancellationToken).ConfigureAwait(false);
-
-            return executed.FirstOrDefault();
         }
 #endif  
 
