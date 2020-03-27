@@ -89,6 +89,10 @@ END
 				var entity = context.Database.ExecuteStoredProcedureAsync<EntitySimple>(proc_Get_EntitySimple, cts.Token) ;
 				//cts.Cancel();
 				entity.Wait();
+
+
+				var proc_Get_EntitySimple2 = new Proc_Get_EntitySimple() { ParameterID = 2 };
+				var entaity = context.Database.ExecuteStoredProcedureFirstOrDefaultAsync<EntitySimple>(proc_Get_EntitySimple2 , cts.Token).Result;
 			}
 
 
