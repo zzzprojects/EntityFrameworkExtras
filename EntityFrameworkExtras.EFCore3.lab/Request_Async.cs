@@ -87,9 +87,13 @@ END
 				var cts = new CancellationTokenSource();
 			
 				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2 };
-				var entity = context.Database.ExecuteStoredProcedureAsync<EntitySimple>(proc_Get_EntitySimple, cts.Token) ;
-				// cts.Cancel();
-				entity.Wait();
+				var entity = context.Database.ExecuteStoredProcedureAsync<EntitySimple>(proc_Get_EntitySimple, cts.Token)  ;
+				//  cts.Cancel();
+			 	entity.Wait();
+
+				var proc_Get_EntitySimple2 = new Proc_Get_EntitySimple() { ParameterID = 2 };
+				var entaity = context.Database.ExecuteStoredProcedureFirstOrDefaultAsync<EntitySimple>(proc_Get_EntitySimple2);//, cts.Token).Result;
+				entaity.Wait();
 			}
 
 
@@ -98,7 +102,7 @@ END
 				var cts = new CancellationTokenSource();
 				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2 };
 				var task = context.Database.ExecuteStoredProcedureAsync(proc_Get_EntitySimple, cts.Token);
-		 	//  cts.Cancel();
+		 	 //   cts.Cancel();
 				task.Wait(); 
 			}
 		}
