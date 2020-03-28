@@ -111,7 +111,7 @@ namespace EntityFrameworkExtras.EFCore
         }
 
 		/// <summary>
-        /// Executes the specified stored procedure against a database asyncrounously
+        /// Executes the specified stored procedure against a database asynchronously
         /// and returns an enumerable of T representing the data returned.
         /// </summary>
         /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>

@@ -38,7 +38,12 @@ namespace EntityFrameworkExtras.EF6
 		    SetOutputParameterValues(info.SqlParameters, storedProcedure);
 		}
 
-	    public static IEnumerable<T> ExecuteStoredProcedure<T>(this Database database, object storedProcedure)
+        /// <summary>
+        /// Executes the specified stored procedure against a database. 
+        /// </summary>
+        /// <param name="database">The database to execute against.</param>
+        /// <param name="storedProcedure">The stored procedure to execute.</param>
+		public static IEnumerable<T> ExecuteStoredProcedure<T>(this Database database, object storedProcedure)
 	    {
 		    if (storedProcedure == null)
 			    throw new ArgumentNullException("storedProcedure");
@@ -67,7 +72,7 @@ namespace EntityFrameworkExtras.EF6
 	    }
 #if NET45
 		/// <summary>
-		/// Executes the specified stored procedure against a database
+		/// Executes the specified stored procedure against a database asynchronously
 		/// and returns an enumerable of T representing the data returned.
 		/// </summary>
 		/// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
@@ -104,7 +109,7 @@ namespace EntityFrameworkExtras.EF6
         }
 
 		 /// <summary>
-        /// Executes the specified stored procedure against a database asyncrhousnouly
+        /// Executes the specified stored procedure against a database asynchronously
         /// and returns the first or default value
         /// </summary>
         /// <typeparam name="T">Type of the data returned from the stored procedure.</typeparam>
@@ -126,6 +131,6 @@ namespace EntityFrameworkExtras.EF6
             return result;
         }
 #endif
-    }
+	}
 }
 #endif
