@@ -33,11 +33,11 @@ EntityFrameworkExtras provides some useful additions to EntityFramework such as 
 
 * Define a stored procedure class
 
-~~~
+~~~ csharp
 [StoredProcedure("storedproc_AddMemberWithAddresses")]
 public class AddMemberStoredWithAddressesProcedure
 {
-  [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "ForeName")]
+        [StoredProcedureParameter(SqlDbType.NVarChar, ParameterName = "ForeName")]
 	public string FirstName { get; set; }
 
 	[StoredProcedureParameter(SqlDbType.NVarChar,ParameterName = "SurName")]
@@ -54,7 +54,7 @@ public class AddMemberStoredWithAddressesProcedure
 
 * A User Defined Table Type parameter is declared as a List<> (List<Address>). The UDT will also require some attributes:
 
-~~~
+~~~ csharp
 [UserDefinedTableType("udt_Address")]
 public class Address
 {
@@ -71,7 +71,7 @@ public class Address
 
 * Execute the Stored Procedure with either a DbContext or an ObjectContext
 
-~~~
+~~~ csharp
 DbContext context = new DbContext("ConnectionString");
 
 var proc = new AddMemberStoredWithAddressesProcedure()
@@ -94,7 +94,7 @@ context.Database.ExecuteStoredProcedure(proc);
 
 * To add an Output parameter you just need to set the Direction parameter to ParameterDirection.Output. 
 
-~~~
+~~~ csharp
 [StoredProcedure("storedProc_GetOldestAge")]
 public class GetOldestAgeStoredProcedure
 {
@@ -105,7 +105,7 @@ public class GetOldestAgeStoredProcedure
 
 * Execute the Stored Procedure and the parameter will be set to the output parameter value
 
-~~~
+~~~ csharp
 var proc = new GetOldestAgeStoredProcedure();
 
 context.Database.ExecuteStoredProcedure(proc);
