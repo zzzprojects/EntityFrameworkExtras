@@ -48,13 +48,13 @@ namespace EntityFrameworkExtras.EFCore
             {
 	            if (type.IsInterface && type.GetGenericTypeDefinition() == typeof(IEnumerable<>))
 	            {
-		            returnType =  type.GetGenericArguments().FirstOrDefault();
+		            returnType =  type.GetGenericArguments()?.FirstOrDefault();
                 }
 	            else
 	            {
-		            returnType = type.GetInterfaces()
-			            .Where(x => x.IsGenericType)
-			            .FirstOrDefault(x => x.GetGenericTypeDefinition() == typeof(IEnumerable<>))?.GetGenericArguments()?.FirstOrDefault();
+		            returnType = type.GetInterfaces()?
+                        .Where(x => x.IsGenericType)?
+                        .FirstOrDefault(x => x.GetGenericTypeDefinition() == typeof(IEnumerable<>))?.GetGenericArguments()?.FirstOrDefault();
                 } 
             }
 
