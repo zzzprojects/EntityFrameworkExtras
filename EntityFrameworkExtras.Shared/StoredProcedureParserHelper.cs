@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 
 #if EF4
@@ -42,18 +43,22 @@ namespace EntityFrameworkExtras.EFCore
 
         public Type GetCollectionType(Type type)
         {
-            if (type.IsGenericType)
+	        Type returnType = null;
+	        if (type.IsGenericType)
             {
-                foreach (Type interfaceType in type.GetInterfaces())
-                {
-                    if (interfaceType.GetGenericTypeDefinition() == typeof (IList<>))
-                    {
-                        return interfaceType.GetGenericArguments()[0];
-                    }
+	            if (type.IsInterface && type.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+	            {
+		            returnType =  type.GetGenericArguments().FirstOrDefault();
                 }
+	            else
+	            {
+		            returnType = type.GetInterfaces()
+			            .Where(x => x.IsGenericType)
+			            .FirstOrDefault(x => x.GetGenericTypeDefinition() == typeof(IEnumerable<>))?.GetGenericArguments()?.FirstOrDefault();
+                } 
             }
 
-            return null;
+            return returnType;
              
         }
 

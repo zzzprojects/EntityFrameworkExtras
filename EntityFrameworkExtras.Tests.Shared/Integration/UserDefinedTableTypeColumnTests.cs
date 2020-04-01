@@ -78,5 +78,29 @@ namespace EntityFrameworkExtras.Tests.Integration
             Assert.AreEqual(GetBytes("michael rodda"), result.ParameterBinary);
 
         }
+
+
+        [Test]
+        public void Execute_ExplicitySetColumnName_CorrectValueReturned2()
+        {
+	        var proc = new UserDefinedTableExplicitlySetColumnNameStoredProcedure2();
+
+	        proc.UserDefinedTableParameter = new List<ExplicitySetColumnNamesUserDefinedTable>()
+	        {
+		        new ExplicitySetColumnNamesUserDefinedTable()
+		        {
+			        NvarChar = "Theses Columns Names were Explicity Set",
+			        BigInt = 1000,
+			        Binary = GetBytes("michael rodda")
+		        }
+	        };
+
+	        var result = ExecuteStoredProcedureSingle<AllTypesStoredProcedureReturn>(proc);
+
+	        Assert.AreEqual("Theses Columns Names were Explicity Set", result.ParameterNvarChar);
+	        Assert.AreEqual(1000, result.ParameterBigInt);
+	        Assert.AreEqual(GetBytes("michael rodda"), result.ParameterBinary);
+
+        }
     }
 }
