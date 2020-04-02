@@ -15,6 +15,13 @@ namespace EntityFrameworkExtras.Tests.Integration.StoredProcedures
     public class UserDefinedTableExplicitlySetColumnNameStoredProcedure
     {
         [StoredProcedureParameter(SqlDbType.Udt)]
-        public List<ExplicitySetColumnNamesUserDefinedTable> UserDefinedTableParameter { get; set; }
+        public IEnumerable<ExplicitySetColumnNamesUserDefinedTable> UserDefinedTableParameter { get; set; }
+    }
+
+    [StoredProcedure("UserDefinedTableStoredProcedure")]
+    public class UserDefinedTableExplicitlySetColumnNameStoredProcedure2
+    {
+	    [StoredProcedureParameter(SqlDbType.Udt)]
+	    public List<ExplicitySetColumnNamesUserDefinedTable> UserDefinedTableParameter { get; set; }
     }
 }
