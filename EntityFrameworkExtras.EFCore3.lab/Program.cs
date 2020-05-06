@@ -6,7 +6,7 @@ namespace Z.EntityFrameworkExtras.Lab.EFCore30
 	{
 		static void Main(string[] args)
 		{
-			Request_Async.Execute();
+			Request_TimeOut.Execute();
 		}
 	}
 }
