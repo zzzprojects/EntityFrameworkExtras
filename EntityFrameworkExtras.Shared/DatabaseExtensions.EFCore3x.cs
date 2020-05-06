@@ -26,7 +26,7 @@ namespace EntityFrameworkExtras.EFCore
 
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
-            database.ExecuteSqlRawAsync(info.Sql, info.SqlParameters);
+            database.ExecuteSqlRaw(info.Sql, info.SqlParameters);
 
             SetOutputParameterValues(info.SqlParameters, storedProcedure);
         }
@@ -78,6 +78,11 @@ namespace EntityFrameworkExtras.EFCore
             using (var command = database.GetDbConnection().CreateCommand())
             {
 	            command.CommandText = info.Sql;
+				int? commandTimeout = database.GetCommandTimeout();
+                if (commandTimeout.HasValue)
+                {
+                    command.CommandTimeout = commandTimeout.Value;
+                }
 	            command.CommandType = CommandType.Text;
 	            command.Parameters.AddRange(info.SqlParameters);
 				command.Transaction = database.CurrentTransaction?.GetDbTransaction();
@@ -133,6 +138,11 @@ namespace EntityFrameworkExtras.EFCore
 	        using (var command = database.GetDbConnection().CreateCommand())
 	        {
 		        command.CommandText = info.Sql;
+				int? commandTimeout = database.GetCommandTimeout();
+                if (commandTimeout.HasValue)
+                {
+                    command.CommandTimeout = commandTimeout.Value;
+                }
 		        command.CommandType = CommandType.Text;
 		        command.Parameters.AddRange(info.SqlParameters);
 		        command.Transaction = database.CurrentTransaction?.GetDbTransaction();

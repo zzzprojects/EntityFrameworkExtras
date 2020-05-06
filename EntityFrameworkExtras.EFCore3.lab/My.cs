@@ -15,6 +15,8 @@ namespace Z.EntityFrameworkExtras.Lab.EFCore30
 		  
 		public static string ConnectionString =
 			("Server=[REPLACE];Initial Catalog = [BD]; Integrated Security = true; Connection Timeout = 300; Persist Security Info=True").Replace("[REPLACE]", Environment.MachineName).Replace("[BD]", DataBaseName);
+		public static string ConnectionStringTimeOut =
+			("Server=[REPLACE];Initial Catalog = [BD]; Integrated Security = true; Connection Timeout = 5; Persist Security Info=True").Replace("[REPLACE]", Environment.MachineName).Replace("[BD]", DataBaseName);
 
 		public static void DeleteBD(DbContext context)
 		{
