@@ -64,55 +64,22 @@ namespace EntityFrameworkExtras.EFCore
         /// <param name="database">The database to execute against.</param>
         /// <param name="storedProcedure">The stored procedure to execute.</param>
         /// <returns></returns>
-        public static IEnumerable<T> ExecuteStoredProcedure<T>(this DatabaseFacade database, object storedProcedure)
+        public static IEnumerable<T> ExecuteStoredProcedure<T>(this DatabaseFacade database, object storedProcedure) where T : class
         {
             if (storedProcedure == null)
-                throw new ArgumentNullException("storedProcedure");
+                throw new ArgumentNullException("storedProcedure"); 
 
-
-            List<T> result = new List<T>();
             var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
+            var contextField = database.GetType().GetField("_context", BindingFlags.Instance | BindingFlags.NonPublic);
 
-            // from : https://github.com/Fodsuk/EntityFrameworkExtras/pull/23/commits/dce354304aa9a95750f7d2559d1b002444ac46f7
-            using (var command = database.GetDbConnection().CreateCommand())
-            {
-	            command.CommandText = info.Sql;
-				int? commandTimeout = database.GetCommandTimeout();
-                if (commandTimeout.HasValue)
-                {
-                    command.CommandTimeout = commandTimeout.Value;
-                }
-	            command.CommandType = CommandType.Text;
-	            command.Parameters.AddRange(info.SqlParameters);
-				command.Transaction = database.CurrentTransaction?.GetDbTransaction();
-	            database.OpenConnection();
+            var context = (DbContext)contextField.GetValue(database); 
 
-	            using (var resultReader = command.ExecuteReader())
-	            {
-		            T obj = default(T);
+            List<T> result = context.Set<T>().FromSqlRaw(info.Sql, info.SqlParameters).AsNoTracking().ToList(); 
 
-		            while (resultReader.Read())
-		            {
-			            obj = Activator.CreateInstance<T>();
-			            foreach (PropertyInfo prop in obj.GetType().GetProperties())
-			            {
-				            var val = GetValue(resultReader, prop.Name);
-				            if (!object.Equals(val, DBNull.Value))
-				            {
-					            prop.SetValue(obj, val, null);
-				            }
-			            }
+            SetOutputParameterValues(info.SqlParameters, storedProcedure); 
 
-			            result.Add(obj);
-		            }
-	            }
-
-            } 
-
-            SetOutputParameterValues(info.SqlParameters, storedProcedure);
-
-            return result;
+	        return result;
         }
 
 		/// <summary>
@@ -124,51 +91,18 @@ namespace EntityFrameworkExtras.EFCore
         /// <param name="storedProcedure">The stored procedure to execute.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public static async Task<IEnumerable<T>> ExecuteStoredProcedureAsync<T>(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default)
+        public static async Task<IEnumerable<T>> ExecuteStoredProcedureAsync<T>(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default) where T : class
         {
 	        if (storedProcedure == null)
 		        throw new ArgumentNullException("storedProcedure");
 
-
-	        List<T> result = new List<T>();
 	        var info = StoredProcedureParser.BuildStoredProcedureInfo(storedProcedure);
 
+	        var contextField = database.GetType().GetField("_context", BindingFlags.Instance | BindingFlags.NonPublic);
 
-	        // from : https://github.com/Fodsuk/EntityFrameworkExtras/pull/23/commits/dce354304aa9a95750f7d2559d1b002444ac46f7
-	        using (var command = database.GetDbConnection().CreateCommand())
-	        {
-		        command.CommandText = info.Sql;
-				int? commandTimeout = database.GetCommandTimeout();
-                if (commandTimeout.HasValue)
-                {
-                    command.CommandTimeout = commandTimeout.Value;
-                }
-		        command.CommandType = CommandType.Text;
-		        command.Parameters.AddRange(info.SqlParameters);
-		        command.Transaction = database.CurrentTransaction?.GetDbTransaction();
-		        database.OpenConnection();
+	        var context = (DbContext)contextField.GetValue(database);
 
-		        using (var resultReader = await command.ExecuteReaderAsync(cancellationToken).ConfigureAwait(false))
-		        {
-			        T obj = default(T);
-
-			        while (await resultReader.ReadAsync(cancellationToken).ConfigureAwait(false))
-			        {
-				        obj = Activator.CreateInstance<T>();
-				        foreach (PropertyInfo prop in obj.GetType().GetProperties())
-				        {
-					        var val = GetValue(resultReader, prop.Name);
-					        if (!object.Equals(val, DBNull.Value))
-					        {
-						        prop.SetValue(obj, val, null);
-					        }
-				        }
-
-				        result.Add(obj);
-			        }
-		        }
-
-	        }
+	        List<T> result = await context.Set<T>().FromSqlRaw(info.Sql, info.SqlParameters).AsNoTracking().ToListAsync(cancellationToken);
 
 	        SetOutputParameterValues(info.SqlParameters, storedProcedure);
 
@@ -183,7 +117,7 @@ namespace EntityFrameworkExtras.EFCore
         /// <param name="database">The database to execute against.</param>
         /// <param name="storedProcedure">The stored procedure to execute.</param>
         /// <returns></returns>
-        public static T ExecuteStoredProcedureFirstOrDefault<T>(this DatabaseFacade database, object storedProcedure)
+        public static T ExecuteStoredProcedureFirstOrDefault<T>(this DatabaseFacade database, object storedProcedure) where T : class
         {
             return database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
         }
@@ -197,7 +131,7 @@ namespace EntityFrameworkExtras.EFCore
         /// <param name="storedProcedure">The stored procedure to execute.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public static async Task<T> ExecuteStoredProcedureFirstOrDefaultAsync<T>(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default)
+        public static async Task<T> ExecuteStoredProcedureFirstOrDefaultAsync<T>(this DatabaseFacade database, object storedProcedure, CancellationToken cancellationToken = default) where T : class
         {
             var executed = await database.ExecuteStoredProcedureAsync<T>(storedProcedure, cancellationToken).ConfigureAwait(false);
 
