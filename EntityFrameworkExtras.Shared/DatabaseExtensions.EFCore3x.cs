@@ -156,9 +156,9 @@ namespace EntityFrameworkExtras.EFCore
 
 			var context = (DbContext)contextField.GetValue(database);
 
-	        var entityType = FindModelEntityType(context, typeof(T));
+			var entityType = FindModelEntityType(context, typeof(T));
 
-	        if (entityType == null)
+			if (entityType == null)
 	        {
 		        return await database.InternalExecuteStoredProcedureAsync<T>(storedProcedure).ConfigureAwait(false);
 	        }
