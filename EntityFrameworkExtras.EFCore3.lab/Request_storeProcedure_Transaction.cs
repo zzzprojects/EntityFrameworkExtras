@@ -126,23 +126,32 @@ END
 			using (var context = new EntityContext())
 			{
 				var proc_Get_EntitySimple = new Proc_Get_EntitySimple2() { ParameterID = 2 };
-
-				using (var tran = new TransactionScope())
-				{
-					context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
-				}
-
-				var transaction = context.Database.BeginTransaction(); 
+				var transaction = context.Database.BeginTransaction();
 				context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
 
-				transaction.Rollback();
 
+				transaction.Rollback();
+				var lisa = context.EntitySimples.ToList();
+			
+ 
 				var list = context.EntitySimples.ToList();
 			}
 
 			using (var context = new EntityContext())
 			{
-				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2 };
+				var proc_Get_EntitySimple = new Proc_Get_EntitySimple2() { ParameterID = 2 };
+ 
+
+				using (var tran = new TransactionScope())
+				{
+					context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
+				}
+				var list = context.EntitySimples.ToList();
+			}
+
+			using (var context = new EntityContext())
+			{
+				var proc_Get_EntitySimple = new Proc_Get_EntitySimple2() { ParameterID = 2 };
 				using (var tran = new TransactionScope())
 				{
 					context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);

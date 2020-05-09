@@ -40,12 +40,12 @@ namespace EntityFrameworkExtras.Tests.Integration
             context.Database.ExecuteStoredProcedure(storedProcedure);
         }
 
-        public IEnumerable<T> ExecuteStoredProcedure<T>(object storedProcedure)
+        public IEnumerable<T> ExecuteStoredProcedure<T>(object storedProcedure) where  T : class
         {
             return context.Database.ExecuteStoredProcedure<T>(storedProcedure);
         }
 
-        public T ExecuteStoredProcedureSingle<T>(object storedProcedure)
+        public T ExecuteStoredProcedureSingle<T>(object storedProcedure) where T : class
         {
             return context.Database.ExecuteStoredProcedure<T>(storedProcedure).FirstOrDefault();
         }

@@ -23,6 +23,7 @@ Global
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{59943b99-772a-47e4-aa70-6d758312c00c}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{770fa648-fa98-455d-8bf7-9832c9ede9c6}*SharedItemsImports = 13
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8189d203-89f3-4d02-b028-f76ce37c9fdb}*SharedItemsImports = 13
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{94101b83-cd6b-4f8a-9ab9-93a0d3371d07}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

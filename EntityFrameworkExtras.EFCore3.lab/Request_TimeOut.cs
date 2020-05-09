@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Transactions;
 using EntityFrameworkExtras.EFCore;
@@ -69,10 +70,7 @@ CREATE PROCEDURE [dbo].[PROC_Get_EntitySimple]
 AS
 BEGIN 
 WAITFOR DELAY '00:00:08';
-update EntitySimples
-Set ColumnInt = @ParameterID ;
-
-Set @ParameterInt = @ParameterID +1 
+select * from  EntitySimples ;
 END
 						";
 					commande.ExecuteNonQuery();
@@ -81,15 +79,16 @@ END
 			}
 
 			// TEST  
-			using (var context = new EntityContext())
-			{
+			using (var ctx = new EntityContext())
+			{   
+
 				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2 };
-				context.Database.SetCommandTimeout(5);
-				 context.Database.ExecuteStoredProcedure(proc_Get_EntitySimple);
+				ctx.Database.SetCommandTimeout(5);
+			
 
 
-				var t = context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
-
+				var t = ctx.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
+				ctx.Database.ExecuteStoredProcedure(proc_Get_EntitySimple);
 				//	var list = context.EntitySimples.ToList();
 			} 
 		}
