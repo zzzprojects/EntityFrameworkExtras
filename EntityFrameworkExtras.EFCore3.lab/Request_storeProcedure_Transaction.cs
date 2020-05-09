@@ -115,6 +115,8 @@ END
 
 				var transaction = context.Database.BeginTransaction();
 
+				var list2 = context.Database.ExecuteStoredProcedure<EntitySimple>(proc_Get_EntitySimple);
+                
 				context.Database.ExecuteStoredProcedure(proc_Get_EntitySimple);
 
 				transaction.Rollback();

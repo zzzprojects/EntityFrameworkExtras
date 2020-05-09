@@ -73,7 +73,8 @@ namespace EntityFrameworkExtras.EFCore
 
             var entityType = FindModelEntityType(context, typeof(T));
 
-            if (entityType == null)
+            // TODO: Review this code which can make some existing code crashing
+            if (entityType == null || true)
             {
 	            return database.InternalExecuteStoredProcedure<T>(storedProcedure);
             } 
@@ -158,7 +159,8 @@ namespace EntityFrameworkExtras.EFCore
 
 			var entityType = FindModelEntityType(context, typeof(T));
 
-			if (entityType == null)
+            // TODO: Review this code which can make some existing code crashing
+			if (entityType == null || true)
 	        {
 		        return await database.InternalExecuteStoredProcedureAsync<T>(storedProcedure).ConfigureAwait(false);
 	        }
