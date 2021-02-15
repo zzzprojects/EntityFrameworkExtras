@@ -10,7 +10,7 @@ This library is powered by [Entity Framework Extensions](https://entityframework
 
 ---
 
-What's EntityFrameworkExtras
+What's EntityFrameworkExtras?
 =====================
 
 EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
