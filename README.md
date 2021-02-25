@@ -99,7 +99,7 @@ context.Database.ExecuteStoredProcedure(proc);
 int age = proc.Age; //Is now the oldest age
 ~~~
 
-## Usefull links
+## Useful links
 
 - [Website](https://entityframework-extras.net/overview)
 - [Download](https://entityframework-extras.net/download)
