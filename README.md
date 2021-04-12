@@ -13,7 +13,7 @@ This library is powered by [Entity Framework Extensions](https://entityframework
 What's EntityFrameworkExtras?
 =====================
 
-EntityFrameworkExtras provides some useful additions to EntityFramework such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
+EntityFrameworkExtras provides some useful additions to EntityFramework, such as executing Stored Procedures with User-Defined Table Types and Output Parameters.
 
 ### Executing a Stored Procedure with a User Defined Table Type
 
@@ -76,9 +76,9 @@ context.Database.ExecuteStoredProcedure(proc);
 
 
 
-### Executing a Stored Procedure with a Output parameter
+### Executing a Stored Procedure with an Output parameter
 
-* To add an Output parameter you just need to set the Direction parameter to ParameterDirection.Output. 
+* To add an Output parameter, you need to set the Direction parameter to ParameterDirection.Output. 
 
 ~~~ csharp
 [StoredProcedure("storedProc_GetOldestAge")]
@@ -89,7 +89,7 @@ public class GetOldestAgeStoredProcedure
 }
 ~~~
 
-* Execute the Stored Procedure and the parameter will be set to the output parameter value
+* Execute the Stored Procedure, and the parameter will be set to the output parameter value
 
 ~~~ csharp
 var proc = new GetOldestAgeStoredProcedure();
