@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras", "EntityFrameworkExtras\EntityFrameworkExtras.csproj", "{7A59AE4F-751F-4BE0-BA70-020072F1409E}"
 EndProject
@@ -50,6 +50,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF6.N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.EntityFrameworkExtras.Lab.EFCore30", "EntityFrameworkExtras.EFCore3.lab\Z.EntityFrameworkExtras.Lab.EFCore30.csproj", "{F213770C-7433-44F6-A44E-EC9E3A304BDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EFCore6", "EntityFrameworkExtras.EFCore6\EntityFrameworkExtras.EFCore6.csproj", "{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EFCore5", "EntityFrameworkExtras.EFCore5\EntityFrameworkExtras.EFCore5.csproj", "{4D2D8EE1-7738-4562-891F-D6C191BE47A0}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb005}*SharedItemsImports = 4
@@ -66,6 +70,7 @@ Global
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{909f9fc3-3384-467b-9a7d-1b2328080ba8}*SharedItemsImports = 5
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{992957e5-4e42-4e90-b510-2c3e3ca56b25}*SharedItemsImports = 5
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{b0c9b99b-0c3c-4e72-85d7-12bcd185c067}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c36b51b1-a379-44dc-b3de-1b7a69536a2e}*SharedItemsImports = 5
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c4c0a992-318d-4b77-b151-69e18b789a52}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +138,14 @@ Global
 		{F213770C-7433-44F6-A44E-EC9E3A304BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F213770C-7433-44F6-A44E-EC9E3A304BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F213770C-7433-44F6-A44E-EC9E3A304BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +164,8 @@ Global
 		{909F9FC3-3384-467B-9A7D-1B2328080BA8} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 		{357C473A-D606-4A9B-8C5F-17DEB6FFB005} = {90962F79-D846-4F3D-9255-2F28A36D089C}
 		{7ED1D61C-9396-4663-952D-D2F7DAD19B18} = {9EC06092-6237-42AE-B0C1-7CF5974368A2}
+		{C36B51B1-A379-44DC-B3DE-1B7A69536A2E} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+		{4D2D8EE1-7738-4562-891F-D6C191BE47A0} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FEFCD82-1FCB-4477-90F7-A935BF59298B}
