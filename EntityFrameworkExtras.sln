@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras", "EntityFrameworkExtras\EntityFrameworkExtras.csproj", "{7A59AE4F-751F-4BE0-BA70-020072F1409E}"
 EndProject
@@ -50,15 +50,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EF6.N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.EntityFrameworkExtras.Lab.EFCore30", "EntityFrameworkExtras.EFCore3.lab\Z.EntityFrameworkExtras.Lab.EFCore30.csproj", "{F213770C-7433-44F6-A44E-EC9E3A304BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EFCore6", "EntityFrameworkExtras.EFCore6\EntityFrameworkExtras.EFCore6.csproj", "{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore6", "EntityFrameworkExtras.EFCore6\EntityFrameworkExtras.EFCore6.csproj", "{C36B51B1-A379-44DC-B3DE-1B7A69536A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EFCore5", "EntityFrameworkExtras.EFCore5\EntityFrameworkExtras.EFCore5.csproj", "{4D2D8EE1-7738-4562-891F-D6C191BE47A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore5", "EntityFrameworkExtras.EFCore5\EntityFrameworkExtras.EFCore5.csproj", "{4D2D8EE1-7738-4562-891F-D6C191BE47A0}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb005}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb006}*SharedItemsImports = 4
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{44ba0cdb-a85d-4657-a935-7d57d6f0eef9}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{4d2d8ee1-7738-4562-891f-d6c191be47a0}*SharedItemsImports = 5
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{59943b99-772a-47e4-aa70-6d758312c00c}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{770fa648-fa98-455d-8bf7-9832c9ede9c6}*SharedItemsImports = 13
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7a59ae4f-751f-4be0-ba70-020072f1409e}*SharedItemsImports = 4
