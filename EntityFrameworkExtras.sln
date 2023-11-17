@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras", "EntityFrameworkExtras\EntityFrameworkExtras.csproj", "{7A59AE4F-751F-4BE0-BA70-020072F1409E}"
 EndProject
@@ -54,26 +54,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore5", "EntityFrameworkExtras.EFCore5\EntityFrameworkExtras.EFCore5.csproj", "{4D2D8EE1-7738-4562-891F-D6C191BE47A0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore7", "EntityFrameworkExtras.EFCore7\EntityFrameworkExtras.EFCore7.csproj", "{382BF8B7-58A9-4574-9811-FB88FE4B6A93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore8", "EntityFrameworkExtras.EFCore8\EntityFrameworkExtras.EFCore8.csproj", "{299B3967-8265-4905-9C47-1A2ED4E9E970}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb005}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb006}*SharedItemsImports = 4
-		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{44ba0cdb-a85d-4657-a935-7d57d6f0eef9}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{4d2d8ee1-7738-4562-891f-d6c191be47a0}*SharedItemsImports = 5
-		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{59943b99-772a-47e4-aa70-6d758312c00c}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{770fa648-fa98-455d-8bf7-9832c9ede9c6}*SharedItemsImports = 13
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7a59ae4f-751f-4be0-ba70-020072f1409e}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7ed1d61c-9396-4663-952d-d2f7dad19b18}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7ed1d61c-9396-4663-952d-d2f7dad19b19}*SharedItemsImports = 4
-		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8189d203-89f3-4d02-b028-f76ce37c9fdb}*SharedItemsImports = 13
-		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8522b7eb-3d2d-4e43-ba3d-3f16095b8efb}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{8a995513-92c8-4e00-8c99-48bd56496f89}*SharedItemsImports = 5
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{909f9fc3-3384-467b-9a7d-1b2328080ba8}*SharedItemsImports = 5
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{992957e5-4e42-4e90-b510-2c3e3ca56b25}*SharedItemsImports = 5
-		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{b0c9b99b-0c3c-4e72-85d7-12bcd185c067}*SharedItemsImports = 4
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c36b51b1-a379-44dc-b3de-1b7a69536a2e}*SharedItemsImports = 5
-		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c4c0a992-318d-4b77-b151-69e18b789a52}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -147,6 +132,14 @@ Global
 		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D2D8EE1-7738-4562-891F-D6C191BE47A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{382BF8B7-58A9-4574-9811-FB88FE4B6A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382BF8B7-58A9-4574-9811-FB88FE4B6A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382BF8B7-58A9-4574-9811-FB88FE4B6A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382BF8B7-58A9-4574-9811-FB88FE4B6A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,9 +160,32 @@ Global
 		{7ED1D61C-9396-4663-952D-D2F7DAD19B18} = {9EC06092-6237-42AE-B0C1-7CF5974368A2}
 		{C36B51B1-A379-44DC-B3DE-1B7A69536A2E} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 		{4D2D8EE1-7738-4562-891F-D6C191BE47A0} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+		{382BF8B7-58A9-4574-9811-FB88FE4B6A93} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+		{299B3967-8265-4905-9C47-1A2ED4E9E970} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FEFCD82-1FCB-4477-90F7-A935BF59298B}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{299b3967-8265-4905-9c47-1a2ed4e9e970}*SharedItemsImports = 5
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb005}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{357c473a-d606-4a9b-8c5f-17deb6ffb006}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{382bf8b7-58a9-4574-9811-fb88fe4b6a93}*SharedItemsImports = 5
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{44ba0cdb-a85d-4657-a935-7d57d6f0eef9}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{4d2d8ee1-7738-4562-891f-d6c191be47a0}*SharedItemsImports = 5
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{59943b99-772a-47e4-aa70-6d758312c00c}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{770fa648-fa98-455d-8bf7-9832c9ede9c6}*SharedItemsImports = 13
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7a59ae4f-751f-4be0-ba70-020072f1409e}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7ed1d61c-9396-4663-952d-d2f7dad19b18}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{7ed1d61c-9396-4663-952d-d2f7dad19b19}*SharedItemsImports = 4
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8189d203-89f3-4d02-b028-f76ce37c9fdb}*SharedItemsImports = 13
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{8522b7eb-3d2d-4e43-ba3d-3f16095b8efb}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{8a995513-92c8-4e00-8c99-48bd56496f89}*SharedItemsImports = 5
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{909f9fc3-3384-467b-9a7d-1b2328080ba8}*SharedItemsImports = 5
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{992957e5-4e42-4e90-b510-2c3e3ca56b25}*SharedItemsImports = 5
+		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{b0c9b99b-0c3c-4e72-85d7-12bcd185c067}*SharedItemsImports = 4
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c36b51b1-a379-44dc-b3de-1b7a69536a2e}*SharedItemsImports = 5
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c4c0a992-318d-4b77-b151-69e18b789a52}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
