@@ -58,6 +58,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkExtras.EFCore8", "EntityFrameworkExtras.EFCore8\EntityFrameworkExtras.EFCore8.csproj", "{299B3967-8265-4905-9C47-1A2ED4E9E970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkExtras.EFCore9", "EntityFrameworkExtras.EFCore9\EntityFrameworkExtras.EFCore9.csproj", "{D80C7239-4C90-D1C9-0C3B-AAA85EB16889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.EntityFrameworkExtras.Lab.EFCore9", "Z.EntityFrameworkExtras.Lab.EFCore9\Z.EntityFrameworkExtras.Lab.EFCore9.csproj", "{92E4ECFB-E67F-47C4-B17E-BAF1655B507F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +144,14 @@ Global
 		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{299B3967-8265-4905-9C47-1A2ED4E9E970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80C7239-4C90-D1C9-0C3B-AAA85EB16889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80C7239-4C90-D1C9-0C3B-AAA85EB16889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80C7239-4C90-D1C9-0C3B-AAA85EB16889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80C7239-4C90-D1C9-0C3B-AAA85EB16889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E4ECFB-E67F-47C4-B17E-BAF1655B507F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E4ECFB-E67F-47C4-B17E-BAF1655B507F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E4ECFB-E67F-47C4-B17E-BAF1655B507F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E4ECFB-E67F-47C4-B17E-BAF1655B507F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +174,7 @@ Global
 		{4D2D8EE1-7738-4562-891F-D6C191BE47A0} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 		{382BF8B7-58A9-4574-9811-FB88FE4B6A93} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 		{299B3967-8265-4905-9C47-1A2ED4E9E970} = {9E15663E-75C8-43B6-8236-4847A2685D42}
+		{D80C7239-4C90-D1C9-0C3B-AAA85EB16889} = {9E15663E-75C8-43B6-8236-4847A2685D42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FEFCD82-1FCB-4477-90F7-A935BF59298B}
@@ -186,6 +199,7 @@ Global
 		EntityFrameworkExtras.Tests.Shared\EntityFrameworkExtras.Tests.Shared.projitems*{b0c9b99b-0c3c-4e72-85d7-12bcd185c067}*SharedItemsImports = 4
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c36b51b1-a379-44dc-b3de-1b7a69536a2e}*SharedItemsImports = 5
 		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{c4c0a992-318d-4b77-b151-69e18b789a52}*SharedItemsImports = 5
+		EntityFrameworkExtras.Shared\EntityFrameworkExtras.Shared.projitems*{d80c7239-4c90-d1c9-0c3b-aaa85eb16889}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
