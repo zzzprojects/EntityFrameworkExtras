@@ -67,10 +67,24 @@ namespace EntityFrameworkExtras.EFCore
 
                 if (propertyInfo != null)
                 {
-                    propertyInfo.SetValue(storedProcedure,
-                        (sqlParameter.Value == DBNull.Value) ?
-                        GetDefault(propertyInfo.PropertyType) :
-                        sqlParameter.Value, null);
+                    var value = sqlParameter.Value;
+
+                    if(value == DBNull.Value)
+                    {
+                        value = GetDefault(propertyInfo.PropertyType);
+                    }
+#if NET6_0_OR_GREATER
+                    else if(propertyInfo.PropertyType == typeof(DateOnly) && value is DateTime)
+                    {
+                        value = DateOnly.FromDateTime((DateTime)value);
+                    }
+                    else if(propertyInfo.PropertyType == typeof(TimeOnly) && value is TimeSpan)
+                    {
+                        value = TimeOnly.FromTimeSpan((TimeSpan)value);
+                    }
+#endif
+
+                    propertyInfo.SetValue(storedProcedure, value, null);
                 }
             }
         }

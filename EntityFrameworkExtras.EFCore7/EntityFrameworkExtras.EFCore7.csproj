@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,7 +10,7 @@
     <DocumentationFile>bin\Release\net6.0\EntityFrameworkExtras.EFCore.xml</DocumentationFile>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <Version>7.0.7</Version>
+    <Version>7.0.8</Version>
     <Authors>ZZZ Projects &amp; Michael Rodda &amp; Craig Bovis</Authors>
     <Company>EntityFrameworkExtras.EFCore</Company>
     <Product>EntityFrameworkExtras.EFCore</Product>

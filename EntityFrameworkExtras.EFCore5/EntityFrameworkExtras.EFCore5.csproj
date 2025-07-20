@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -8,7 +8,7 @@
     <DocumentationFile>bin\Release\net5.0\EntityFrameworkExtras.EFCore.xml</DocumentationFile>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <Version>5.0.7</Version>
+    <Version>5.0.8</Version>
     <Authors>ZZZ Projects &amp; Michael Rodda &amp; Craig Bovis</Authors>
     <Company>EntityFrameworkExtras.EFCore</Company>
     <Product>EntityFrameworkExtras.EFCore</Product>

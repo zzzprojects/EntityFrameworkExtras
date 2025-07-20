@@ -64,20 +64,20 @@ END
 				{
 					commande.CommandText = @"    
 CREATE PROCEDURE [dbo].[PROC_Get_EntitySimple]
-
-	@ParameterID INT 	,
-	@DateOnly DATE,
-	@TimeOnly TIME(7),
-	@ParameterInt INT = NULL OUTPUT 
-
-
+    @ParameterID INT,
+    @DateOnly DATE OUTPUT,
+    @TimeOnly TIME(7) OUTPUT
 AS
-BEGIN 
-update EntitySimples
-Set ColumnInt = @ParameterID ;
+BEGIN
+    -- Example update; make sure this is what you want (no WHERE clause)
+    UPDATE EntitySimples
+    SET ColumnInt = @ParameterID;
 
-Set @ParameterInt = @ParameterID +1 
+    -- Set output values
+    SET @DateOnly = CAST(GETDATE() AS DATE);
+    SET @TimeOnly = CAST(GETDATE() AS TIME(7));
 END
+
 						";
 					commande.ExecuteNonQuery();
 				}
@@ -86,7 +86,7 @@ END
 			// TEST  
 			using (var context = new EntityContext())
 			{
-				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2, DateOnly = DateOnly.MinValue, TimeOnly = TimeOnly.MinValue };
+				var proc_Get_EntitySimple = new Proc_Get_EntitySimple() { ParameterID = 2 };
 
 				using (var tran = new TransactionScope())
 				{
@@ -121,14 +121,14 @@ END
 		[StoredProcedure("PROC_Get_EntitySimple")]
 		public class Proc_Get_EntitySimple
 		{
-			[StoredProcedureParameter(SqlDbType.Int, Direction = ParameterDirection.Output)]
-			public int ParameterInt { get; set; }
+			//[StoredProcedureParameter(SqlDbType.Int, Direction = ParameterDirection.Output)]
+			//public int ParameterInt { get; set; }
 
 			[StoredProcedureParameter(SqlDbType.Int, Direction = ParameterDirection.Input)]
 			public int ParameterID { get; set; }
-            [StoredProcedureParameter(SqlDbType.Date, Direction = ParameterDirection.Input)]
+            [StoredProcedureParameter(SqlDbType.Date, Direction = ParameterDirection.Output)]
             public DateOnly DateOnly { get; set; }
-            [StoredProcedureParameter(SqlDbType.Time, Direction = ParameterDirection.Input)]
+            [StoredProcedureParameter(SqlDbType.Time, Direction = ParameterDirection.Output)]
             public TimeOnly TimeOnly { get; set; }
         }
 
