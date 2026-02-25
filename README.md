@@ -60,4 +60,3 @@ Through [Entity Framework Extensions](https://entityframework-extensions.net/?ut
 
 To view all our free and paid projects, visit our website [ZZZ Projects](https://zzzprojects.com/).
 
-To view all our free and paid projects, visit our website [ZZZ Projects](https://zzzprojects.com/).
